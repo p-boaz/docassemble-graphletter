@@ -1,0 +1,146 @@
+objects:
+  - user: Individual
+  - user.activity: DAList.using(object_type=Individual)
+  - user.activity[i].data_processed: |
+      DADict.using(object_type=Organization,
+                   auto_gather=False,
+                   complete_attribute='complete')
+  - user.activity[i].data_processed[j].place_of_business: City
+---
+code: |
+  user.activity[i].data_processed.new(user.activity[i].categories_of_data.true_values())
+  user.activity[i].data_processed.gathered = True
+---
+code: |
+  user.activity[i].data_processed[j].name.text
+  user.activity[i].data_processed[j].place_of_business.city
+  user.activity[i].data_processed[j].complete = True
+---
+question: |
+  Do you have any processing activities?
+yesno: user.activity.there_are_any
+---
+question: |
+  Name of your ${ ordinal(i) } business function processing data
+subquestion: |
+  A reference to the team within your company that will be using the data
+fields:
+  - Business Function: user.activity[i].name.first
+    choices:
+      - Finance
+      - Human Resources
+      - Sales
+      - Marketing
+      - Sales
+      - Engineering
+      - Other
+---
+question: |
+  Do other business functions besides ${ user.activity } process data?
+yesno: user.activity.there_is_another
+---
+question: |
+  Which of the following categories of data does ${ user.activity[i] }
+  process?
+fields:
+  - no label: user.activity[i].categories_of_data
+    datatype: checkboxes
+    choices:
+      - Identification data (name, address, telephone, ...)
+      - Family & household (spouse, children, …)
+      - Electronic location data (GPS position,…)
+      - Housing characteristics (house type, …)
+      - Racial or ethnic data
+      - Physical health
+      - Criminal offences and sentences
+      - Psychological data (personality, character, …)
+      - Electronic identification data (e-mail, IP-addresses, cookies, ...)
+      - Education and training
+      - Consumption habits
+      - Financial characteristics (bank account, credit card details, …)
+      - Religious or philosophical convictions 
+      - National register number / social security identification number
+      - Genetic data 
+      - Biometric identification data (fingerprints, iris scans, …)
+      - Personal characteristics (age, gender, civil status,
+      - Pictures & video (e.g. in directories, on websites, …)
+      - Lifestyle data (hobbies, …)
+      - Mental health 
+      - Political opinions
+      - Sound recordings (call (centre) recordings
+      - Physical data (height, weight, …)
+      - Leisure activities and interests
+      - Profession and job
+      - Data concerning sexual life
+      - Trade union membership
+      - Memberships (sports clubs, …)
+      - Other
+---
+question: |
+  What types of personal data are processed in ${ user.activity[i].possessive(j) }?
+subquestion: |
+  The exact type of data that is being processed
+fields:
+  - types: user.activity[i].data_processed[j].name.text
+    choices:
+      - Contact Details
+      - Bank Details
+      - Pension Details
+      - Annual Leave Details
+      - Sick Leave Details
+      - Performance Details
+      - Employment History
+      - Pay Details
+      - Contact Details
+      - Ethnicity
+      - Disability Details
+      - Purchase History
+      - Qualifications
+      - Lifestyle Information
+      - Other
+  - Please Specify: user.activity[i].data_processed[j].name.text
+    js show if: |
+      val("user.activity[i].data_processed[j].name.text") == "Other"
+---
+question: |
+  In what city does ${ user.activity[i].data_processed[j] }
+  do business?
+fields:
+  - City: user.activity[i].data_processed[j].place_of_business.city
+  - State: user.activity[i].data_processed[j].place_of_business.state
+    code: states_list()
+---
+table: activity_table
+rows: user.activity
+columns:
+  - Business Function: |
+      row_item.name.first
+  - Contract Link: |
+      row_item.data_processed
+edit:
+  - name.first
+  - data_processed
+---
+mandatory: True
+question: All done
+subquestion: |
+  % for activity in user.activity:
+  You have a activity named ${ activity }.
+ 
+  % for data_category in activity.data_processed.keys():
+  ${ activity } has hired a ${ data_category }
+  called ${ activity.data_processed[data_category] },
+  which has a principal place of business in
+  ${ activity.data_processed[data_category].place_of_business }.
+ 
+  % endfor
+  
+  % endfor
+  
+  ${ activity_table }
+
+  You can also [download this information].
+
+  [download this information]: ${ activity_table.export('ROPA.csv', title='ROPA').url_for() }
+  
+  ${ user.activity.add_action() }

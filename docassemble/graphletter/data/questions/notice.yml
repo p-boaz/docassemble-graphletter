@@ -1,0 +1,105 @@
+metadata:
+  title: Notice
+---
+objects:
+  - criteria: DADict.using(object_type=DAList.using(minimum_number=1, there_is_another=False, object_type=Thing), keys=('Privacy Policies', 'Communication to Internal Personnel', 'Responsibility and Accountability for Policies', 'Review and Approval', 'Consistency of Privacy Policies and Procedures with Laws and Regulations', 'Personal Information Identification and classification', 'Risk Assessment', 'Consistency of Commitments with Privacy Policies and Procedures', 'Infrastructure and Systems Management', 'Privacy Incident and breach Management', 'Supporting Resources', 'Qualifications of Internal Personnel', 'Privacy Awareness and training', 'Changes in Regulatory and Business Requirements'),there_is_another=False, complete_attribute='complete')
+---
+code: |
+  for score in criteria[i]:
+    score.gather()
+  criteria[i].complete = True
+---
+mandatory: True
+question: |
+  Thank you for your responses. Here is how you scored. 
+subquestion: |
+  
+  ${ criteria_table }
+  
+  You can also [download this information].
+
+  [download this information]: ${ criteria_table.export('mgmt_criteria.csv', title='Management Criteria').url_for() }
+---
+table: criteria_table
+rows: |
+  criteria['Privacy Policies'] + criteria['Communication to Internal Personnel'] + criteria['Responsibility and Accountability for Policies'] + criteria['Review and Approval'] + criteria['Consistency of Privacy Policies and Procedures with Laws and Regulations'] + criteria['Personal Information Identification and classification'] + criteria['Risk Assessment'] + criteria['Consistency of Commitments with Privacy Policies and Procedures'] + criteria['Infrastructure and Systems Management'] + criteria['Privacy Incident and breach Management'] + criteria['Supporting Resources'] + criteria['Qualifications of Internal Personnel'] + criteria['Privacy Awareness and training'] + criteria['Changes in Regulatory and Business Requirements']
+columns:
+  - Name: |
+      row_item.name.text
+  - Score: |
+      row_item.score
+---
+question: |
+  Notice
+subquestion: |
+  The entity provides notice about its privacy policies and procedures and identifies the purposes for which personal information is collected, used, retained, and disclosed.
+---
+question: |
+  Privacy Policies (1.1.0)
+subquestion: |
+  The entity defines and documents its privacy policies with respect to notice; choice and consent; collection; use, retention and disposal; access; disclosure to third parties; security for privacy; quality; and monitoring and enforcement.
+fields:
+  - no label: criteria['Privacy Policies'][i].name.text
+    default: Privacy Policies
+    js show if: |
+      val("fruit") == "apple"
+  - no label: criteria['Privacy Policies'][i].score
+    datatype: radio
+    code: |
+      [
+        {'1': "Some aspects of privacy policies exist informally.",
+                 'help': "Apples are good in pies."},
+        {'2': "Privacy policies exist but may not be complete, and are not                   fully documented.",
+          'help': "Oranges are a type of citrus fruit."},
+        {'3': "Policies are defined for: notice, choice and consent;                         collection; use, retention and disposal; access; disclosure;                       security for privacy; quality; and monitoring and enforcement.",
+         'help': "Pears are an acquired taste."},
+        {'4': "Compliance with privacy policies is monitored and the                         results of such monitoring are used to reinforce key privacy                       messages.",
+         'help': "Pears are an acquired taste."},
+        {'5': "Management monitors compliance with policies and procedures                   concerning personal information. Issues of non-compliance are                     identified and remedial action taken to ensure compliance in a                     timely fashion.",
+         'help': "Pears are an acquired taste."}
+       ]
+---
+question: |
+  Communication to Internal Personnel (1.1.1)
+subquestion: |
+  Privacy policies and the consequences of non- compliance with such policies are communicated, at least annually, to the entity’s internal personnel responsible for collecting, using, retaining and disclosing personal information.
+  
+  Changes in privacy policies are communicated to such personnel shortly after the changes are approve.
+fields:
+  - no label: criteria['Communication to Internal Personnel'][i].name.text
+    default: Communication to Internal Personnel
+    js show if: |
+      val("fruit") == "apple"
+  - no label: criteria['Communication to Internal Personnel'][i].score
+    datatype: radio
+    code: |
+       [
+        {'1': "Some aspects of privacy policies exist informally."},
+        {'2': "Privacy policies exist but may not be complete, and are not                    fully documented."},
+        {'3': "Policies are defined for: notice, choice and consent;                          collection; use, retention and disposal; access; disclosure;                      security for privacy; quality; and monitoring and enforcement."},
+        {'4': "Compliance with privacy policies is monitored and the                           results of such monitoring are used to reinforce key privacy                       messages."},
+        {'5': "Management monitors compliance with policies and procedures                   concerning personal information. Issues of non-compliance are                     identified and remedial action taken to ensure compliance in a                     timely fashion."},
+       ]
+---
+question: |
+  Responsibility and Accountability for Policies (1.1.2)
+subquestion: |
+  Responsibility and accountability are assigned to a person or group for developing, documenting, implementing, enforcing, monitoring and updating the entity’s privacy policies. 
+  
+  The names of such person or group and their responsibilities are communicated to the internal personnel. 
+fields:
+  - no label: criteria['Responsibility and Accountability for Policies'][i].name.text
+    default: Responsibility and Accountability for Policies
+    js show if: |
+      val("fruit") == "apple"
+  - no label: criteria['Responsibility and Accountability for Policies'][i].score
+    datatype: radio
+    code: |
+       [
+        {'1': "Management is becoming aware of privacy issues but has not yet identified a key sponsor or assigned responsibility.Privacy issues are addressed reactively."},
+        {'2': "Management understands the risks, requirements (including legal, regulatory and industry) and their responsibilities with respect to privacy.There is an understanding that appropriate privacy management is important and needs to be considered. Responsibility for operation of the entity’s privacy program is assigned; however, the approaches are often informal and fragmented with limited authority or resources allocated."},
+        {'3': "Defined roles and responsibilities have been developed and assigned to various individuals / groups within the entity and employees are aware of those assignments. The approach to developing privacy policies and procedures is formalized and documented."},
+        {'4': "Management monitors the assignment of roles and responsibilities to ensure they are being performed, that the appropriate information and materials are developed and that those responsible are communicating effectively. Privacy initiatives have senior management support."},
+        {'5': "The entity (such as a committee of the board of directors) regularly monitors the processes and assignments of those responsible for privacy and analyzes the progress to determine its effectiveness. Where required, changes and improvements are made in a timely and effective fashion."},
+       ]
+---
