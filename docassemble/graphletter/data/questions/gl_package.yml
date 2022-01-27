@@ -1,0 +1,7 @@
+---
+include:
+  - gl_settings.yml
+  - gl_baseline.yml
+---
+modules:
+  - .gl_general

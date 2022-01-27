@@ -1,8 +1,8 @@
 # docassemble.graphletter
 
-A docassemble extension.
+graphletter's docassemble backend
 
 ## Author
 
-System Administrator, admin@graphletter.com
+System Admin, admin@graphletter.com
 

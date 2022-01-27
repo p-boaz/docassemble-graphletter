@@ -1,0 +1,40 @@
+##########################
+# This file mostly holds placeholder values that will be overwritten
+# by individual interviews. Overriding is as simple as copying, altering
+# and writing in the value that you want.
+---
+code: |
+  # Set this to the name of your application
+  # Defaults to checking for a possible name from global docassemble config
+  gl_app_name = get_config('appname', get_config('external hostname','graphletter.com'))
+---
+###########################
+# localization and internationalization / i18n settings
+---
+code: |
+  GL_DEFAULT_COUNTRY = "US"
+---
+code: |
+  GL_DEFAULT_STATE = None
+---
+code: |
+  GL_DEFAULT_LANGUAGE = "en"
+---
+###############################
+# Features
+---
+features:
+  navigation: True 
+  cache documents: False
+---
+id: set basic options
+mandatory: True
+code: |
+  # Set some variables that we need in all the interviews
+  multi_user = True
+  allow_cron = True
+  speak_text = False
+---
+code: |
+  user_has_saved_answers = len(interview_list(filename=user_info().filename)[0]) > 1 if interview_list(filename=user_info().filename) else False
+---
