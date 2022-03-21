@@ -511,8 +511,8 @@ fields:
       - Personnel File
       - Recruitment
       - Direct Marketing
-      - Staff administration
-      - Customer orders
+      - Staff Administration
+      - Customer Orders
       - Other
   - Please Specify: data_types[i].details[j].purpose
     js show if: |
@@ -533,6 +533,7 @@ fields:
       - Recipients in third countries or international organisations
       - Institutional or commercial partners
       - Other
+      - I am not sure
   - Please Specify: data_types[i].details[j].recipients
     js show if: |
       val("data_types[i].details[j].recipients") == "Other"
@@ -591,7 +592,7 @@ fields:
       - binding corporate rules (BCRs)
       - certification mechanisms
       - another GDPR Article 49 derogation
-      
+      - I am not sure
   - Art. 49 Derogation: transfer_details.derogation      
     required: false
     js show if: |
