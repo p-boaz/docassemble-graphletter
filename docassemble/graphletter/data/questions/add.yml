@@ -60,6 +60,7 @@ features:
 mandatory: True
 id: interview order
 code: |
+  nav.hide()
   intro
   users[0].name.first
   if user_logged_in():
