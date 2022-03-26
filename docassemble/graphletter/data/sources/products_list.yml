@@ -1,34 +1,2764 @@
-object: Product
-module: ".products"
-items:
-- name: Stripe
-- name: Microsoft
-- name: QuickBooks
-- name: Xero
-- name: FreshBooks
-- name: Wave
-- name: WordPress
-- name: Squarespace
-- name: HubSpot
-- name: InfusionSoft
-- name: Salesforce
-- name: Marketo
-- name: AWeber
-- name: MailChimp
-- name: Constant Contact
-- name: TweetDeck
-- name: Buffer
-- name: Hootsuite
-- name: AdWords
-- name: Bing Ads
-- name: Moz
-- name: Contently
-- name: SumoMe
-- name: Zendesk
-- name: Skype
-- name: Slack
-- name: Basecamp
-- name: Trello
-- name: Evernote
-- name: Office 365
-- name: DropBox
+  object: Product
+  module: ".products"
+  items:
+  - name: Stripe
+    description: ''
+  - name: Microsoft
+    description: ''
+  - name: QuickBooks
+    description: ''
+  - name: Xero
+    description: ''
+  - name: FreshBooks
+    description: ''
+  - name: Wave
+    description: ''
+  - name: WordPress
+    description: ''
+  - name: Squarespace
+    description: ''
+  - name: HubSpot
+    description: ''
+  - name: InfusionSoft
+    description: ''
+  - name: Marketo
+    description: ''
+  - name: AWeber
+    description: ''
+  - name: MailChimp
+    description: ''
+  - name: Constant Contact
+    description: ''
+  - name: TweetDeck
+    description: ''
+  - name: Buffer
+    description: ''
+  - name: Hootsuite
+    description: ''
+  - name: AdWords
+    description: ''
+  - name: Bing Ads
+    description: ''
+  - name: Moz
+    description: ''
+  - name: Contently
+    description: ''
+  - name: SumoMe
+    description: ''
+  - name: Zendesk
+    description: ''
+  - name: Skype
+    description: ''
+  - name: Slack
+    description: ''
+  - name: Basecamp
+    description: ''
+  - name: Trello
+    description: ''
+  - name: Evernote
+    description: ''
+  - name: Office 365
+    description: ''
+  - name: DropBox
+    description: ''
+  - name: Flow XO 
+    description: AI online chatbot software
+  - name: Clubhouse 
+    description: Management platform for software development
+  - name: Craft CMS 
+    description: flexible, user-friendly CMS
+  - name: Daily 
+    description: Faster and smarter video chat
+  - name: Beamer 
+    description: Changelog tool as a service
+  - name: Loom 
+    description: Video recording software
+  - name: Ontraport 
+    description: CRM and marketing platform
+  - name: PartnerStack 
+    description: Full stack solution for partnerships
+  - name: Podia 
+    description: Sell courses, memberships, and downloads
+  - name: CleverReach 
+    description: Email marketing solution
+  - name: Hiver 
+    description: Email collaboration software
+  - name: Snap Surveys 
+    description: Survey software
+  - name: RowShare 
+    description: Online collaborative tables
+  - name: Nitro 
+    description: PDF productivity and eSigning
+  - name: CloudSpot 
+    description: Client photo galleries for photographers
+  - name: Mav Social 
+    description: Social media management tool
+  - name: Okta 
+    description: Secure identity management
+  - name: Satmetrix 
+    description: Customer experience management
+  - name: Retrium 
+    description: Agile and scrum retrospectives made easy
+  - name: Bonjoro 
+    description: Convert customers with video
+  - name: MailMunch 
+    description: Convert abandoning visitors into subscribers
+  - name: Lightning AI 
+    description: AI powered advertising campaigns
+  - name: TestBoard 
+    description: Analysis management platform
+  - name: Eventdex 
+    description: Event managment software
+  - name: Booxi 
+    description: Smart appointment booking
+  - name: CommonKey 
+    description: Team password management
+  - name: Good Audience 
+    description: Social media marketing
+  - name: AccountsPortal 
+    description: Online accounting software
+  - name: OrderCircle 
+    description: Wholesale selling tools and solutions
+  - name: Scout App 
+    description: Application monitoring for Ruby, Elixir, and Python
+  - name: Simple Invoices 
+    description: Invoicing for entrepreneurs
+  - name: Social Tables 
+    description: Event planning platform
+  - name: Falcon.io 
+    description: Social media marketing platform
+  - name: Axosoft 
+    description: Scrum software for agile teams
+  - name: Sharetribe 
+    description: Online marketplace platform
+  - name: PayWhirl 
+    description: Subscription payment software
+  - name: DeskMoz 
+    description: Live chat agents
+  - name: Minbox 
+    description: Cloud file sharing and collaboration
+  - name: Nylas 
+    description: Calendar and contacts API
+  - name: Segment 
+    description: Customer data infrastructure
+  - name: Delivra 
+    description: Sophisticated marketing automation
+  - name: Teachable 
+    description: Create and sell online courses
+  - name: Seomator 
+    description: Online SEO audit tool
+  - name: Streak 
+    description: CRM for Gmail
+  - name: Outreach 
+    description: Sales engagement platform
+  - name: REIPro 
+    description: Real estate investor software
+  - name: ReportGarden 
+    description: Marketing agency software
+  - name: Esponce 
+    description: QR code and mobile marketing platform
+  - name: Fulcrum 
+    description: Mobile form builder
+  - name: Meetingbird 
+    description: Meeting scheduling platform
+  - name: curv.io 
+    description: Analyze, understand and improve your SEO
+  - name: Solve360 
+    description: Productivity CRM for web and mobile
+  - name: IOpipe 
+    description: Tools for running applications on AWS Lambda
+  - name: Maximizer 
+    description: CRM software
+  - name: Duda 
+    description: Website builder for professionals
+  - name: ClickUp 
+    description: The productivity platform
+  - name: Snipcart 
+    description: Add a shopping cart to any site in minutes
+  - name: Earth Class Mail 
+    description: Digitizing mail
+  - name: Bkper 
+    description: The bookkeeping app for G Suite
+  - name: MindFire 
+    description: Marketing automation software
+  - name: Route4me 
+    description: Route planning software
+  - name: Mailparser 
+    description: Email parser software
+  - name: salesradar.io 
+    description: Lead generation CRM for freelancers
+  - name: Cheddar 
+    description: Usage-based and subscription billing
+  - name: E-goi 
+    description: Marketing automation software
+  - name: AppFollow 
+    description: Product management tool for app growth
+  - name: Meetupcall 
+    description: Business conference call services
+  - name: Piktochart 
+    description: Create infographics and presentations
+  - name: Salonized 
+    description: Customer loyalty and satisfaction platform
+  - name: Brick FTP 
+    description: File sharing for business
+  - name: SpiffyStores 
+    description: E-commerce software
+  - name: Apify 
+    description: Web scraping and automation platform
+  - name: Manifestly 
+    description: A checklist app for teams
+  - name: GetAmbassador 
+    description: Referral software
+  - name: Showpad 
+    description: Global sales enablement platform
+  - name: Metricly 
+    description: Full stack performance monitoring
+  - name: TimeHero 
+    description: Smart work management
+  - name: Putler 
+    description: Meaningful e-commerce analytics
+  - name: Rewardful 
+    description: Affiliate and referral programs for Stripe
+  - name: Robly 
+    description: Small business marketing automation
+  - name: Benchmark 
+    description: Email marketing services
+  - name: Netlify 
+    description: Platform for automating modern web projects
+  - name: Cronofy 
+    description: Scheduling APIs for SaaS companies
+  - name: Asana 
+    description: Work management platform
+  - name: Sparkcentral 
+    description: Digital messaging platform
+  - name: Ronin 
+    description: Invoicing and time tracking software
+  - name: Gusto 
+    description: Online HR platform
+  - name: Checkfront 
+    description: Online bookings made easy
+  - name: SuperSaaS 
+    description: Appointment scheduling software
+  - name: Mailigen 
+    description: Create, send and automate email newsletters
+  - name: PayForm 
+    description: Payment forms that convert to sales
+  - name: POWr 
+    description: Website plugins to supercharge your site
+  - name: Arcadier 
+    description: Create online marketplaces
+  - name: Grow 
+    description: Business dashboard software
+  - name: Periscope Data 
+    description: Data visualization platform
+  - name: AWeber 
+    description: Email marketing platform
+  - name: Hive 
+    description: Email CRM
+  - name: Egnyte 
+    description: Enterprise file sharing
+  - name: SignUpGenius 
+    description: Online sign up forms
+  - name: ProWorkflow 
+    description: Project management software
+  - name: Nusii Proposals 
+    description: Online proposal software
+  - name: Hatchbuck 
+    description: Marketing and CRM software
+  - name: Sifter 
+    description: Simple bug and issue tracker
+  - name: Tailwind 
+    description: Visual marketing software
+  - name: Kayako 
+    description: Help desk software
+  - name: Quick Base 
+    description: App creation software
+  - name: Signaturit 
+    description: Electronic signature solution
+  - name: FrontApp 
+    description: The shared inbox for teams
+  - name: Cheddar Up 
+    description: Collect money online in minutes
+  - name: Azendoo 
+    description: Work management platform for teams
+  - name: 3dcart 
+    description: E-commerce software
+  - name: Square Space 
+    description: Website builder software
+  - name: Crowdcast 
+    description: Live video platform
+  - name: Exotel 
+    description: Cloud Communication APIs for SMS
+  - name: Thinkific 
+    description: Online course platform
+  - name: AdEspresso 
+    description: Digital advertising managment software
+  - name: Bidsketch 
+    description: Proposal software
+  - name: Cognito Forms 
+    description: Easy-to-use online form builder
+  - name: cPanel 
+    description: Hosting platform
+  - name: Recurly 
+    description: Subscription management platform
+  - name: about.me 
+    description: Create one-page websites in minutes
+  - name: Pepipost 
+    description: AI-powered email delivery
+  - name: ActiveTrail 
+    description: Marketing automation software
+  - name: Megalytic 
+    description: Client reports and dashboard
+  - name: Chatra 
+    description: Live chat and offline messaging for businesses
+  - name: DroneDeploy 
+    description: Drone software platform
+  - name: Intercom 
+    description: Customer messaging platform
+  - name: Enalyzer 
+    description: Mobile survey platform
+  - name: Import.io 
+    description: Enterprise web data extraction
+  - name: AeroLeads 
+    description: Business intelligence software
+  - name: LiquidPlanner 
+    description: Project management software
+  - name: Pure360 
+    description: Email marketing software
+  - name: RocketResponder 
+    description: Lead generation with email marketing automation
+  - name: Shufti Pro 
+    description: Identity verification service
+  - name: Pipeliner CRM 
+    description: Sales CRM software
+  - name: Datadog 
+    description: Modern monitoring and analytics
+  - name: Pushover 
+    description: Simple notifications for Android, iOS, and desktop
+  - name: Clubworx 
+    description: Gym managment software
+  - name: JitBit 
+    description: Help desk software
+  - name: Pantheon 
+    description: High-performance hosting platform
+  - name: Heymarket SMS 
+    description: Business text messaging
+  - name: Appointlet 
+    description: Appointment scheduling software for better sales
+  - name: ClearEvent 
+    description: Event management software
+  - name: Selz 
+    description: Ecommerce platform for growing businesses
+  - name: Magentrix 
+    description: Collaboration solutions for business
+  - name: TradeGecko 
+    description: Inventory management software
+  - name: PagerDuty 
+    description: Digital operations management
+  - name: Sendinblue 
+    description: Marketing automation software
+  - name: StatusCake 
+    description: Website uptime and performance monitoring
+  - name: BiznessApps 
+    description: App maker for small businesses
+  - name: HappyFox 
+    description: Help desk software
+  - name: Natero 
+    description: Data-driven customer success management
+  - name: Mailgun 
+    description: Powerful transactional email APIs
+  - name: Airbrake 
+    description: Full-stack application monitoring
+  - name: MyVR 
+    description: Vacation rental software
+  - name: Contractbook 
+    description: Contract management for modern businesses
+  - name: Chameleon 
+    description: Product adoption for web apps
+  - name: ClinchPad 
+    description: Online sales CRM
+  - name: Armatic 
+    description: Lifecycle management and automation platform
+  - name: Odoo 
+    description: Open source ERP and CRM
+  - name: Droptask 
+    description: Creative task management
+  - name: GoToWebinar 
+    description: Online meeting software
+  - name: InVision 
+    description: Digital product design software
+  - name: Foxy.io 
+    description: Hosted payment pages
+  - name: StitchData 
+    description: Simple, extensible ETL built for data teams
+  - name: Sprintly 
+    description: Agile project management software
+  - name: CompanyHub 
+    description: Customizable CRM software
+  - name: Resource Guru 
+    description: Planning and scheduling software
+  - name: Tucr.io 
+    description: Partial payment software
+  - name: SendBird 
+    description: Chat and messaging SDKs and API
+  - name: BrightPearl 
+    description: Retail operations platform
+  - name: Commerce.js 
+    description: eCommerce API for developers and designers
+  - name: QuickFile 
+    description: Accounting and bookkeeping software
+  - name: Sage 
+    description: Online accounting software
+  - name: Baremetrics 
+    description: Insights for Stripe, Braintree, Recurly and Chargify
+  - name: GetResponse 
+    description: Online marketing platform
+  - name: SocialEngine 
+    description: Social network software
+  - name: AcuityScheduling 
+    description: Online appointment scheduling
+  - name: adjust 
+    description: Mobile attribution and analytics
+  - name: ReferralMD 
+    description: Referral management CRM software
+  - name: Infusionsoft 
+    description: Marketing and sales platform
+  - name: Megaventory 
+    description: Cloud inventory management
+  - name: Skilljar 
+    description: Online training and onboarding platform
+  - name: Payrexx 
+    description: Online payments platform
+  - name: Sirportly 
+    description: Help desk software
+  - name: BookingHawk 
+    description: Online booking system
+  - name: MeisterTask 
+    description: Task management for teams
+  - name: Formdesk 
+    description: Online form builder
+  - name: ProcessPlan 
+    description: Business process manager
+  - name: LeadCandy 
+    description: Lead generation and sales intelligence
+  - name: Constant Contact 
+    description: Powerful email marketing
+  - name: Reckon 
+    description: Accounting software for small businesses
+  - name: Eventable 
+    description: Calendar marketing software
+  - name: ParseHub 
+    description: Powerful web scraper
+  - name: Sumall 
+    description: Social media automation software
+  - name: AccountDock 
+    description: Billing history for Stripe apps
+  - name: CStorePro 
+    description: Inventory management software
+  - name: ViralSweep 
+    description: Viral marketing platform
+  - name: Campayn 
+    description: The affordable way to build better emails
+  - name: AuditFile 
+    description: Secure, cloud-based audit software for CPAs
+  - name: PayKickstart 
+    description: Shopping cart and affiliate management platform
+  - name: PhotoBiz 
+    description: Business tools for creatives
+  - name: SpeakUp 
+    description: Employee-sourced problem solving
+  - name: Explara 
+    description: The NextGen event platform
+  - name: Small Improvements 
+    description: Employee performance app
+  - name: NewsCred 
+    description: Enterprise content marketing platform
+  - name: ContextSmith 
+    description: Customer event data platform
+  - name: Salesflare 
+    description: CRM for small businesses
+  - name: Envoice 
+    description: Payment process platform
+  - name: Crugo 
+    description: Team collaboration tool
+  - name: Swiftype 
+    description: Cloud-based search platform
+  - name: SlickText 
+    description: Text message marketing
+  - name: Kevy 
+    description: eCommerce marketing automation
+  - name: ReCharge 
+    description: Recurring subscriptions for e-commerce
+  - name: Teampay 
+    description: Company spending tracking software
+  - name: Rival IQ 
+    description: Social media marketing analytics
+  - name: ClickMeter 
+    description: Optimize all your marketing links
+  - name: Martialytics 
+    description: Management software for martial arts schools
+  - name: Kimonus 
+    description: Company intelligence platform
+  - name: Kanban Tool 
+    description: Project management tool
+  - name: Lawcus 
+    description: Legal case management software
+  - name: Task Pigeon 
+    description: Task management tool
+  - name: SendX 
+    description: Email marketing software
+  - name: Sendlane 
+    description: All-in-one marketing solution
+  - name: GitHub 
+    description: Software development platform
+  - name: Setmore 
+    description: Appointment scheduling and payments
+  - name: Cascade Strategy 
+    description: Execution platform for strategic planning
+  - name: Akkroo 
+    description: Events, sales and marketing connected
+  - name: Procurify 
+    description: Powerful spend management software
+  - name: Nutshell 
+    description: Sales automation CRM
+  - name: PaperForm 
+    description: Online form builder
+  - name: Gumroad 
+    description: E-commerce and audience-building software
+  - name: FormTitan 
+    description: Salesforce forms and documents
+  - name: Realvolve 
+    description: Real estate CRM
+  - name: WebinarNinja 
+    description: Webinar software
+  - name: SaaSquatch 
+    description: Customer referral program software
+  - name: Ruum 
+    description: Simple project management
+  - name: Discourse 
+    description: Modern forum software
+  - name: Joomag 
+    description: Digital publishing platform
+  - name: Polydone 
+    description: Agile project management
+  - name: Prospect.io 
+    description: Sales automation platform
+  - name: VerticalResponse 
+    description: Email marketing services
+  - name: Pingdom 
+    description: Website performance monitoring
+  - name: Interseller 
+    description: Outbound automation platform
+  - name: HelpHandles 
+    description: Customer service analytics
+  - name: Thryv 
+    description: Small business marketing automation software
+  - name: LessAccounting 
+    description: Simple accounting software for small businesses
+  - name: Sana Commerce 
+    description: Integrated e-commerce software
+  - name: Approval Donkey 
+    description: Simple approval workflows for your business
+  - name: Referral Rock 
+    description: Referral marketing software
+  - name: Join It 
+    description: Membership management software
+  - name: Payfunnels 
+    description: Fast online payments
+  - name: DataFox 
+    description: Intelligent company data
+  - name: PayDirt 
+    description: Simple invoicing and time tracking
+  - name: Mavenlink 
+    description: Project management software
+  - name: Shopventory 
+    description: Inventory management software
+  - name: HeySpace 
+    description: Task management software
+  - name: inwise 
+    description: Marketing cloud for your business
+  - name: Resurva 
+    description: Appointment, scheduling and calendar app
+  - name: Fresh Books 
+    description: Invoice and accounting software
+  - name: Frederick 
+    description: Automated marketing software
+  - name: Spiro 
+    description: Sales CRM powered by AI
+  - name: Alore 
+    description: Championing sales and marketing productivity
+  - name: Amplitude 
+    description: Product analytics for the digital era
+  - name: Cloudpipes 
+    description: Cloud based application integration
+  - name: Citrix ShareFile 
+    description: Sync, store and share files
+  - name: Resource 
+    description: Modern outreach for recruiting teams
+  - name: Unbounce 
+    description: Conversion platform for marketers
+  - name: Wave Accounting 
+    description: Financial software for small businesses
+  - name: Shoprocket 
+    description: Shopping cart software
+  - name: FeedBlitz 
+    description: Email marketing software
+  - name: Quip 
+    description: Team collaboration tool
+  - name: I Done This 
+    description: Team progress tracking software
+  - name: WebMerge 
+    description: Document generation software
+  - name: eStreamDesk 
+    description: Help desk software
+  - name: Captable.io 
+    description: Cap table management
+  - name: Fieldwire 
+    description: Field management software for construction teams
+  - name: Open Dining 
+    description: Online ordering system for restaurants
+  - name: Factivate 
+    description: Marketing analytics platform
+  - name: Cayzu 
+    description: Cloud help desk software
+  - name: BookWhen 
+    description: Online booking system for workshops and events
+  - name: Mixmax 
+    description: Email tracking and scheduling
+  - name: Rocketium 
+    description: Video creation for marketers
+  - name: Sellfy 
+    description: Online stores for digital products
+  - name: Campaign Monitor 
+    description: Email marketing and automation for your business
+  - name: SendHub 
+    description: Business SMS text messaging
+  - name: Amiqus 
+    description: AML, ID and compliance Checks
+  - name: Infogram 
+    description: Infographics, reports and maps
+  - name: Perkbox 
+    description: Team benefits platform
+  - name: Blossom 
+    description: Project tracking for distributed companies
+  - name: Orion 
+    description: Real-time voice PTT for teams
+  - name: DocuSign 
+    description: Electronic signature software
+  - name: Planyo 
+    description: Online reservation system
+  - name: Viewneo 
+    description: Digital signage software
+  - name: Agile 
+    description: CRM software
+  - name: Act-On 
+    description: Marketing automation software
+  - name: Aero Workflow 
+    description: Accounting workflow and practice management
+  - name: DialMyCalls 
+    description: Voice broadcasting made easy
+  - name: Bubble 
+    description: Visual programming
+  - name: StreamSend 
+    description: Powerful email marketing tools
+  - name: Human Interest 
+    description: 401(k) for startups and small businesses
+  - name: RingByName 
+    descriptio : Cloud-based phone system
+  - name: DeepCrawl 
+    description: Making businesses visible
+  - name: Upwave 
+    description: Business platform for collaborative work
+  - name: CircleCI 
+    description: Continuous integration and delivery
+  - name: Breezy HR 
+    description: End-to-end recruiting software
+  - name: Diffbot 
+    description: AI web data extraction and crawling
+  - name: FullContact 
+    description: Identity resolution and data insights solutions
+  - name: ShipStation 
+    description: Shipping software for E-commerce
+  - name: Myagi 
+    description: Connecting companies and people in commerce
+  - name: Geckoboard 
+    description: Business dashboard software
+  - name: Abacus 
+    description: Real time expense reporting
+  - name: Sendicate 
+    description: The email marketing app for smart businesses
+  - name: Cloudinary 
+    description: Digital asset management
+  - name: Stunning 
+    description: Churn prevention software
+  - name: Process Street 
+    description: Checklist, workflow and SOP software
+  - name: Ning 
+    description: Social network website builder
+  - name: PreciseFP 
+    description: Data management platform
+  - name: LeadSquared 
+    description: Marketing automation and CRM software
+  - name: UsabilityHub 
+    description: User testing platform
+  - name: NetHunt 
+    description: CRM that ties to Gmail and other G Suite apps
+  - name: OpenSea 
+    description: Ship chartering marketplace for Shipowners
+  - name: ShortStack 
+    description: Marketing platform for contests and giveaways
+  - name: Replicon 
+    description: Employee time tracking software
+  - name: ChatFuel 
+    description: Relationship-based messenger marketing
+  - name: Project Manager 
+    description: Project management software
+  - name: Speak2Leads 
+    description: Lead response management
+  - name: Proposify 
+    description: Business proposal software
+  - name: Ptengine 
+    description: Analytics and heat map tool
+  - name: Accelo 
+    description: Cloud-Based service operations automation
+  - name: MoonClerk 
+    description: Recurring payments platform
+  - name: Harvest 
+    description: Time tracking software
+  - name: ProfitWell 
+    description: Subscription and financial metrics
+  - name: PocketSuite 
+    description: Online booking platform
+  - name: Scoro 
+    description: Business management software
+  - name: Better Proposals 
+    description: Online proposal software
+  - name: Stamplay 
+    description: Workflow automation with AI
+  - name: Samepage 
+    description: Real-time document collaboration
+  - name: Prefinery 
+    description: Pre-launch waiting list software
+  - name: B2BWave 
+    description: B2B ecommerce platform
+  - name: Printfection 
+    description: Swag management platform
+  - name: LeadDyno 
+    description: Affiliate marketing software
+  - name: Blissfully 
+    description: SaaS management platform
+  - name: Fountain 
+    description: Hiring software
+  - name: Pandadoc 
+    description: eSign beautiful proposals
+  - name: Tapfiliate 
+    description: Affiliate tracking software
+  - name: Framer 
+    description: Interactive design tool
+  - name: ReadMe 
+    description: Beautiful product and API documentation
+  - name: Parolu 
+    description: All-in-one collaboration tool
+  - name: SigOpt 
+    description: Enterprise-grade optimization platform
+  - name: Hashtracking 
+    description: Analytics for social media campaigns
+  - name: Teamwork 
+    description: Project managment software
+  - name: Omnify 
+    description: Online booking and scheduling software
+  - name: PracticeIgnition 
+    description: Client engagement, proposals and payments
+  - name: 15Five 
+    description: Continuous performance management software
+  - name: E-junkie 
+    description: Sell downloads and tangibles on any website
+  - name: GoSquared 
+    description: Intelligent live chat software
+  - name: LaunchPass 
+    description: Subscription access to anything with Slack
+  - name: Cloudflare 
+    description: Web performance and security
+  - name: Teamie 
+    description: Collaborative learning platform
+  - name: Unleashed Software 
+    description: Inventory management software
+  - name: Rezdy 
+    description: Online booking scheduling software
+  - name: SendOwl 
+    description: E-commerce platform
+  - name: Clinked.com 
+    description: White-label client portal
+  - name: Runscope 
+    description: API performance monitoring
+  - name: GoFormz 
+    description: Mobile forms and reporting solution
+  - name: Oveit 
+    description: Event payment platform
+  - name: Rocketspark 
+    description: Website builder and ecommerce software
+  - name: Minute-It 
+    description: Make meetings work
+  - name: Quote Roller 
+    description: Smart document automation
+  - name: PennyPipe 
+    description: Bookkeeping software
+  - name: GitPrime 
+    description: Software engineering metrics
+  - name: ERPNext 
+    description: Cloud ERP software
+  - name: TeamWave 
+    description: Small business CRM
+  - name: Mobiniti SMS 
+    description: Text message marketing
+  - name: Projectplace 
+    description: Project management software
+  - name: PipelineDeals 
+    description: Sales CRM software
+  - name: SweepBright 
+    description: Support software for real estate agencies
+  - name: Tenzo 
+    description: Restaurant management software
+  - name: JobNimbus 
+    description: CRM and project management software
+  - name: ChargeOver 
+    description: Recurring billing software
+  - name: Tender 
+    description: Customer support software
+  - name: RepairShopr 
+    description: All-in-one platform for repair shops
+  - name: AdaptiveU 
+    description: Cloud based training platform
+  - name: stensul 
+    description: Email generation platform
+  - name: Brivity 
+    description: Real estate CRM
+  - name: Artichoke 
+    description: Simplify your appointment-based business
+  - name: Handshake 
+    description: B2B eCommerce platform
+  - name: Neto 
+    description: E-commerce and point of sale software
+  - name: 10to8 
+    description: Appointment scheduling software
+  - name: Airtable 
+    description: Organize anything you can imagine
+  - name: Easy Projects 
+    description: Project managment software
+  - name: Clearbit 
+    description: Data engine for customer interactions
+  - name: MeetingKing 
+    description: Meeting minutes software
+  - name: Slybroadcast 
+    description: Voicemail messaging app
+  - name: SendSafely 
+    description: End-to-end encryption platform
+  - name: Hotjar 
+    description: Heatmaps and visitor recordings
+  - name: Feathr 
+    description: Marketing toolkit for events
+  - name: Noticeable 
+    description: Changelog and newsfeed built in seconds
+  - name: Simvoly 
+    description: Create funnels and websites
+  - name: Veeqo 
+    description: Helps omnichannel retailers sell everywhere
+  - name: Avaza 
+    description: Project management, timesheets and invoices
+  - name: Cyfe 
+    description: All-in-one business dashboard
+  - name: Tidy 
+    description: Membership management software
+  - name: DigitalOcean 
+    description: The simplest cloud platform for developers
+  - name: Minterapp 
+    description: Online Time Tracking Tool
+  - name: Automate 
+    description: Automate marketing, sales and business processes
+  - name: Memberful 
+    description: Professional membership software
+  - name: APE Mobile 
+    description: Construction intelligence platform
+  - name: Orders2me 
+    description: Online ordering system for restaurants
+  - name: Cobot 
+    description: Management software for coworking spaces
+  - name: iContact 
+    description: Email marketing software
+  - name: CoSchedule 
+    description: Content marketing editorial calendar
+  - name: Salesforce 
+    description: CRM software solutions
+  - name: ELMAH 
+    description: Error management for .NET websites
+  - name: Pusher 
+    description: Hosted APIs to build real-time apps
+  - name: Flint 
+    description: Credit card processing for small businesses
+  - name: Algolia 
+    description: A powerful search-as-a-service solution
+  - name: RingCentral 
+    description: Phone, messaging, and video tools
+  - name: Neptune.io 
+    description: Incident response automation for DevOps
+  - name: OpsGenie 
+    description: Modern incident management platform
+  - name: GetProspect 
+    description: Email finding software
+  - name: Contactually 
+    description: CRM for real estate professionals
+  - name: Click Funnels 
+    description: Marketing funnels and landing pages
+  - name: Spently 
+    description: Shopify notification emails
+  - name: Hunter.io 
+    description: Find email addresses in seconds
+  - name: Harvestr 
+    description: Product management software
+  - name: TeamWeek 
+    description: Simple project planning
+  - name: Moqups 
+    description: Wireframing software
+  - name: Okappy 
+    description: Worforce management platform
+  - name: Crisp 
+    description: Chat with website visitors
+  - name: Sugester 
+    description: Software for customer support
+  - name: MonkeyLearn 
+    description: Natural language processing
+  - name: BigCommerce 
+    description: Ecommerce software and shopping cart platform
+  - name: Sellsy 
+    description: Sales management for teams
+  - name: Repsly 
+    description: Mobile CRM for field teams
+  - name: Forte Payments 
+    description: Payment solutions for developers
+  - name: Batchbook 
+    description: Small business CRM
+  - name: OpenChannel 
+    description: Build your own app store
+  - name: Brosix 
+    description: Secure instant messenger for your team
+  - name: Campaigner 
+    description: Email marketing automation at scale
+  - name: Vanilla Forums 
+    description: Community forum software
+  - name: Dwolla 
+    description: Secure ACH payments
+  - name: AdStage 
+    description: Advanced PPC reporting
+  - name: Papyrs 
+    description: Company intranet and Wiki software
+  - name: Heap 
+    description: Customer data platform
+  - name: VOIQ 
+    description: AI conversational voice agent
+  - name: Apruve 
+    description: B2B credit management platform
+  - name: Emma 
+    description: Email marketing platform
+  - name: Splash 
+    description: Email marketing software
+  - name: Vtiger CRM 
+    description: CRM software
+  - name: monday.com 
+    description: Team management software
+  - name: DocSend 
+    description: Business-critical documents
+  - name: Delighted 
+    description: Actionable customer feedback
+  - name: Fomo 
+    description: Social proof marketing platform
+  - name: Acquire 
+    description: Customer communication platform
+  - name: NeverBounce 
+    description: Real-time email verification
+  - name: New Relic 
+    description: Real-time insights for modern software
+  - name: ROSS Intelligence 
+    description: Legal research powered by AI
+  - name: Better Voice 
+    description: Customized phone and voicemail system
+  - name: Sumo 
+    description: Turn visitors into ecommerce customers
+  - name: ChargeDesk 
+    description: Remarkable billing support
+  - name: LedgerDocs 
+    description: Document management software
+  - name: Virtuous 
+    description: Nonprofit CRM
+  - name: InvoiceSherpa 
+    description: A/R platform with integrated payment solutions
+  - name: Ezidox 
+    description: Document collection made easy
+  - name: ONTRAPORT 
+    description: CRM and marketing automation software
+  - name: Vervoe 
+    description: AI-powered skill testing
+  - name: Caspio 
+    description: Easy-to-use visual application builder
+  - name: Pingpad 
+    description: Collaborative product discovery
+  - name: FounderSuite 
+    description: Software for raising venture capital
+  - name: Verloop 
+    description: Conversational marketing and sales platform
+  - name: AccountingSuite 
+    description: Online accounting and inventory
+  - name: Labs64 NetLicensing 
+    description: Innovative license management solution
+  - name: DataDeck 
+    description: Business performance platform
+  - name: Aptrinsic 
+    description: Unlock your SaaS product’s growth potential
+  - name: FileStack 
+    description: File upload API for developers
+  - name: Clio 
+    description: Legal management software
+  - name: vCita 
+    description: Business mangagment app
+  - name: Close.io 
+    description: Inside sales CRM
+  - name: CleverTap 
+    description: Mobile marketing platform
+  - name: KanbanFlow 
+    description: Lean project management tool
+  - name: Signalayer 
+    description: Popup creation platform
+  - name: ExpressPigeon 
+    description: Email marketing software
+  - name: LiquidBlox 
+    description: Visual website builder for designers
+  - name: Autopilot 
+    description: Marketing automation software
+  - name: PEPPERI 
+    description: Mobile sales software
+  - name: Muzeek 
+    description: Technology for the live music industry
+  - name: LeadBoxer 
+    description: Turn visitors into qualified leads
+  - name: Deputy 
+    description: Shift planning software
+  - name: Twilio 
+    description: Communication APIs for SMS, Voice, Video
+  - name: Calendly 
+    description: Scheduling appointments and meetings
+  - name: Submittable 
+    description: Submission management software
+  - name: Teamgate 
+    description: Sales management product
+  - name: Recruitee 
+    description: Recruitment software
+  - name: Freedcamp 
+    description: Project management software
+  - name: Cloud Attract 
+    description: Real estate leads software
+  - name: Act! 
+    description: CRM and marketing automation
+  - name: Monitis 
+    description: Web performance monitoring tools
+  - name: Goshippo 
+    description: Powerful shipping made simple
+  - name: Turbine 
+    description: HR software
+  - name: Weebly 
+    description: eCommerce tools for entrepreneurs
+  - name: Pinpointe 
+    description: Email marketing for companies
+  - name: Picreel 
+    description: Conversion rate optimization
+  - name: PayTabs 
+    description: Online payments platform
+  - name: Paymo 
+    description: Project management software
+  - name: Fusebill 
+    description: Subscription billing management
+  - name: Groove 
+    description: Online help desk software
+  - name: EmailOctopus 
+    description: Email marketing via Amazon SES
+  - name: Copper 
+    description: CRM for G Suite and Google
+  - name: MyOperator 
+    description: Cloud-based call management system
+  - name: CrazyCall 
+    description: Call center software
+  - name: Coupon Carrier 
+    description: Increase sales with unique coupons
+  - name: Textline 
+    description: Business texting platform
+  - name: Sunlight 
+    description: Helps companies grow a learning culture
+  - name: LknSuite 
+    description: Social media marketing
+  - name: PageProof 
+    description: Review and approval proofing system
+  - name: FreshMail 
+    description: Email marketing software
+  - name: Applozic 
+    description: Chat SDKs and messaging APIs
+  - name: Paperspace 
+    description: Cloud machine learning
+  - name: Moltin 
+    description: eCommerce API for innovative brands
+  - name: Launch27 
+    description: Appointment scheduling software
+  - name: Capsule CRM 
+    description: The smart simple online CRM
+  - name: ReachMail 
+    description: Email marketing platform
+  - name: Accordium 
+    description: Personalized sales videos
+  - name: eMailPlatform 
+    description: Email and SMS marketing platform
+  - name: Supermetrics 
+    description: Automation tool for PPC, SEO and social
+  - name: Vision6 
+    description: SMS and email marketing software
+  - name: AgencyAnalytics 
+    description: Reporting platform for agencies
+  - name: Teem 
+    description: Enterprise meeting management system
+  - name: Detectify 
+    description: Website vulnerability scanner
+  - name: Launchcloud 
+    description: Mobile forms software
+  - name: Shoplo 
+    description: Multichannel e-commerce platform
+  - name: Balsamiq 
+    description: Wireframing software
+  - name: ScheduleOnce 
+    description: Integrated scheduling platform
+  - name: Visible 
+    description: Investor reporting software
+  - name: Insightly 
+    description: CRM for lifelong customer relationships
+  - name: NationBuilder 
+    description: Software for leaders
+  - name: Mixpanel 
+    description: User behavior analytics
+  - name: BrightMove 
+    description: Hiring software
+  - name: Streamtime 
+    description: Creative project management software
+  - name: VIVAHR 
+    description: Applicant tracking system
+  - name: Kloudio 
+    description: Update business data from spreadsheets
+  - name: SendGrid 
+    description: Email delivery service
+  - name: Plesk 
+    description: Innovative hosting control panel
+  - name: Weekdone 
+    description: Weekly team planning software
+  - name: Help Scout 
+    description: Help desk software
+  - name: pi.team 
+    description: Online accounting and invoicing software
+  - name: FormCrafts 
+    description: Online form builder
+  - name: TwentyThree 
+    description: Video marketing platform
+  - name: SMS Alert 
+    description: Text alert notification system
+  - name: MailUp 
+    description: Email marketing software
+  - name: BrandMentions 
+    description: Monitor your brand and competitors
+  - name: Talkable 
+    description: Referral marketing software
+  - name: Newsman 
+    description: Email marketing service
+  - name: AppsForOps 
+    description: Customer success software platform
+  - name: Carts Guru 
+    description: Recover abandoned carts and turn them into sales
+  - name: ChartMogul 
+    description: Subscription business growth
+  - name: Superhuman 
+    description: Fastest email experience ever made
+  - name: Teamleader 
+    description: Project management and invoicing
+  - name: Drip 
+    description: Marketing automation for e-commerce
+  - name: LastPass 
+    description: Password software
+  - name: Parserr 
+    description: Email parser software
+  - name: Trexle 
+    description: Payment API platform
+  - name: TRDATA 
+    description: Communication platform for traders
+  - name: Pipedrive 
+    description: CRM and pipeline management software
+  - name: Hello Bar 
+    description: Exit-intent software
+  - name: Scurri 
+    description: Actionable insights for commerce
+  - name: Pipefy 
+    description: Lean process management platform
+  - name: Kintone 
+    description: Data management for businesses
+  - name: Raven Tools 
+    description: White label marketing reports
+  - name: Sales Machine 
+    description: Customer success platform
+  - name: Opsimize 
+    description: Online backoffice for modern restaurants
+  - name: FastCall 
+    description: Native Salesforce dialer
+  - name: Sweetspot 
+    description: Enterprise digital dashboard
+  - name: Rerun 
+    description: Subscription and membership billing
+  - name: PUSH Tech 
+    description: Marketing and engagement automation
+  - name: Bench 
+    description: Online bookkeeping services for small businesses
+  - name: noCRM.io 
+    description: Lead management software
+  - name: LiveAgent 
+    description: Help desk software
+  - name: Valota 
+    description: Workplace digital signage
+  - name: TicketTailor 
+    description: Online ticketing platform
+  - name: LeadSimple 
+    description: Sales CRM for property managers
+  - name: Primaseller 
+    description: E-commerce inventory management software
+  - name: OnePageCRM 
+    description: Simple online sales CRM
+  - name: Piesync 
+    description: Sync contacts between cloud applications
+  - name: Receptive 
+    description: Feature request management for SaaS
+  - name: SharpSpring 
+    description: Marketing automation software
+  - name: Dashlane 
+    description: Password manager
+  - name: Moverbase 
+    description: Moving company software
+  - name: Uploadcare 
+    description: Smart CDN solution
+  - name: Entryless 
+    description: Paperless accounts payable process
+  - name: Pivotal Tracker 
+    description: Project management for successful teams
+  - name: Hiveage 
+    description: Online invoicing software
+  - name: Scalr 
+    description: Hybrid cloud management platform
+  - name: Notarize 
+    description: Legal online notarizations
+  - name: CartFunnel 
+    description: Advance shopping cart and checkout platform
+  - name: Lemlist 
+    description: Send emails that get replies
+  - name: Fileboard 
+    description: Sales engagement platform
+  - name: Site24x7 
+    description: Performance monitoring for DevOps
+  - name: Punchpass 
+    description: Software for fitness, dance, and yoga studios
+  - name: Codenvy 
+    description: Cloud workspaces for development teams
+  - name: Refersion 
+    description: Affiliate marketing software
+  - name: Proto.io 
+    description: Fully-interactive high-fidelity prototypes
+  - name: TaxJar 
+    description: Automated sales tax reporting
+  - name: Reply 
+    description: Shared inbox for teams
+  - name: Spondyr 
+    description: API template platform
+  - name: Statusy 
+    description: Status page software
+  - name: Blueleaf 
+    description: Financial relationship management
+  - name: MarketGoo 
+    description: SEO tools
+  - name: Olark 
+    description: Live chat software
+  - name: Miestro 
+    description: Online course platform
+  - name: Myphoner 
+    description: Call tracking software for sales teams
+  - name: Deskpro 
+    description: Helpdesk software
+  - name: HoneyBook 
+    description: Client management software
+  - name: Maintenance Care 
+    description: Software maintenance management
+  - name: Formstack 
+    description: Intelligent online forms
+  - name: MailerLite 
+    description: Advanced email marketing made simple
+  - name: FileInvite 
+    description: Document collection platform
+  - name: DOZ 
+    description: Vetted on-demand marketers
+  - name: SalesSeek 
+    description: Sales CRM platform
+  - name: Norbert 
+    description: Email finder platform
+  - name: SuiteDash 
+    description: Client portal software
+  - name: Blackfire 
+    description: Continuous PHP performance testing
+  - name: ElasticEmail 
+    description: Email delivery platform
+  - name: ContentGems 
+    description: Content discovery engine
+  - name: Mattermark 
+    description: Discover, enrich, and analyze companies
+  - name: ReviewTrackers 
+    description: Measure the customer experience
+  - name: GTMHub 
+    description: OKRs software
+  - name: Reesio 
+    description: Real estate management software
+  - name: Box 
+    description: Manage, share and access content from anywhere
+  - name: Web CEO 
+    description: SEO tools for agencies
+  - name: Onfleet 
+    description: Last mile delivery software
+  - name: Octobat 
+    description: Tax-compliance digital businesses
+  - name: Docsify 
+    description: Email tracking and Gmail productivity suite
+  - name: Appointy 
+    description: Appointment scheduling software
+  - name: MadKudu 
+    description: Predictive lead scoring
+  - name: ForceManager 
+    description: Mobile CRM for field sales
+  - name: Mettrr 
+    description: Website development company
+  - name: CloudBoost 
+    description: The realtime JavaScript backend
+  - name: Vbout 
+    description: Marketing automation platform
+  - name: 12th Door 
+    description: Invoicing software for small businesses
+  - name: Quilt Data 
+    description: Manage data like code
+  - name: Leadfeeder 
+    description: Website visitor tracking software
+  - name: Tidings 
+    description: Newsletter software
+  - name: JumpSeller 
+    description: E-commerce platform
+  - name: TalentLMS 
+    description: Online learning management system
+  - name: Cloze 
+    description: Relationship management
+  - name: Bonsai 
+    description: The Number 1 freelance product suite
+  - name: Appointedd 
+    description: Online booking for customer engagement
+  - name: SurveyMonkey 
+    description: Online survey tool
+  - name: NiceJob 
+    description: Company reputation platform
+  - name: Mention 
+    description: Influencer marketing platform
+  - name: Brandquiz 
+    description: Create a quiz, survey, form, lead page easily
+  - name: Coda 
+    description: A new doc that grows with your ideas
+  - name: BillyApp 
+    description: Hassle-free accounting software
+  - name: Printavo 
+    description: Simple shop management software
+  - name: AmigoCloud 
+    description: Collaborative mapping platform
+  - name: NodeSource 
+    description: Real-time node.js performance and security
+  - name: ClickDesk 
+    description: Live chat and support software
+  - name: Poptin 
+    description: Engaging web and mobile overlays
+  - name: PaymentEvolution 
+    description: Modern payroll, benefits and HR
+  - name: GoCanvas 
+    description: Mobile business apps and forms
+  - name: CallFire 
+    description: Texting and calling solutions
+  - name: Boingnet 
+    description: Direct marketing automation
+  - name: LionDesk 
+    description: Integrated CRM platform
+  - name: Standard Cyborg 
+    description: 3D scanning and sensing
+  - name: Solodev 
+    description: Content managment system
+  - name: Runrun.it 
+    description: Work management platform
+  - name: Transformify 
+    description: Recruitment CRM
+  - name: KiSSFLOW 
+    description: Workflow management software
+  - name: Float 
+    description: Visual team planner for agencies
+  - name: Vint 
+    description: Fitness studio management software
+  - name: Evenium 
+    description: Event planning software
+  - name: TestMonitor 
+    description: Powerful test management
+  - name: B12 
+    description: Beautiful custom websites built faster and cheaper
+  - name: Datanyze 
+    description: The leader in technographics
+  - name: Cloudability 
+    description: Cloud cost management
+  - name: PlanGrid 
+    description: Construction software
+  - name: Metadata 
+    description: Account-based advertising for B2B companies
+  - name: GoCardless 
+    description: Direct Debit payments
+  - name: The Booking Factory 
+    description: Hotel management system
+  - name: Knack 
+    description: Online database software
+  - name: Slack 
+    description: Team messaging app
+  - name: Shippingeasy 
+    description: Shipping software for E-commerce
+  - name: UserGuiding 
+    description: User testing platform
+  - name: Invite Robot 
+    description: Automatic invites for Slack teams
+  - name: Formitize 
+    description: Making paperwork paperless
+  - name: Bitbucket 
+    description: Manage and share Git repositories
+  - name: Stormboard 
+    description: Realtime brainstorming and collaboration
+  - name: HeyOrca 
+    description: Social media calendar
+  - name: QuickMail 
+    description: Email outreach service
+  - name: Cyberimpact 
+    description: Email marketing solution
+  - name: Lighthouse 
+    description: One on One meeting software
+  - name: UpKeep 
+    description: Mobile-first CMMS software
+  - name: InvoiceBerry 
+    description: Invoice and expense tracking
+  - name: Cerb 
+    description: Web-based teamwork and workflow automation
+  - name: MoonMail 
+    description: Email marketing software
+  - name: Dotcom Monitor 
+    description: Website monitoring and performance testing
+  - name: Popmetrics 
+    description: Website conversion software
+  - name: SellHack 
+    description: Sales prospecting and lead generation
+  - name: Outfield 
+    description: Field sales app and CRM software
+  - name: FetchRev 
+    description: Offline marketing software
+  - name: UPilot 
+    description: Sales CRM with role-based access
+  - name: ParkMyCloud 
+    description: Cloud management software
+  - name: Minute 
+    description: All meeting information in one place
+  - name: Statsbot 
+    description: SQL analytics platform
+  - name: ProdPad 
+    description: Product management software
+  - name: Smooch.io 
+    description: Omnichannel messaging platform
+  - name: Servicem8 
+    description: Smart job management
+  - name: Subbly 
+    description: Subscription ecommerce platform
+  - name: ScaleGrid 
+    description: Database hosting software
+  - name: People Data Labs 
+    description: Powerful people data
+  - name: LicenseSpot 
+    description: .NET licensing and copy protection
+  - name: Compass 
+    description: Automated management reports
+  - name: Happy 
+    description: Real-time operations platform
+  - name: Statista 
+    description: Statistics portal for market data
+  - name: MongoDB 
+    description: Open source document database
+  - name: SnapEngage 
+    description: Enterprise chat software
+  - name: NinjaMock 
+    description: Wireframe and mockup tool
+  - name: amoCRM 
+    description: Online sales management software
+  - name: Parseur 
+    description: Easy-to-use email parser
+  - name: SalesLoft 
+    description: Sales engagement platform
+  - name: Nimble 
+    description: CRM software to grow your business
+  - name: GitLab 
+    description: Web-based Git-repository manager
+  - name: Reactful 
+    description: AI-driven web engagement platform
+  - name: Exploratory 
+    description: Data science for anyone
+  - name: Mailshake 
+    description: A simple solution for cold emails
+  - name: Pushwoosh 
+    description: Push notification and cross-channel marketing
+  - name: Acceptiva 
+    description: Online payments and donations for nonprofits
+  - name: inDinero 
+    description: Startup accounting software
+  - name: Loopy Loyalty 
+    description: Loyalty platform for small businesses
+  - name: Aimtell 
+    description: Web push notifications
+  - name: Deadline Funnel 
+    description: Evergreen deadlines and countdown timers
+  - name: Landbot 
+    description: Chatbot software
+  - name: TailoredMail 
+    description: Email marketing software
+  - name: Todoist 
+    description: To do list app and task manager
+  - name: Metatask 
+    description: A simple workflow tool for business
+  - name: Pardot 
+    description: B2B marketing automation
+  - name: ServiceJoy 
+    description: Invoice software
+  - name: LearnWorlds 
+    description: Platform to sell online courses
+  - name: DepositFix 
+    description: Payments with HubSpot forms
+  - name: Remarkety 
+    description: E-commerce marketing automation
+  - name: FreeAgent 
+    description: Accounting software for small businesses
+  - name: Envoy 
+    description: Visitor management software
+  - name: PracticePanther 
+    description: Case management software for attorneys
+  - name: Clevertim 
+    description: Simple CRM
+  - name: Plecto 
+    description: Business dashboard software
+  - name: ConvergeHub 
+    description: Small and medium business CRM software
+  - name: Trigger.io 
+    description: Mobile platform for web developers
+  - name: Tender 
+    description: History widget, dunning and metrics for Stripe
+  - name: Magpi 
+    description: Advanced mobile data messaging
+  - name: Ortoo 
+    description: Appexchange lead and case management
+  - name: MemberSpace 
+    description: Squarespace membership plugin
+  - name: Spark Hire 
+    description: Simple video interview software
+  - name: Ecwid 
+    description: E-commerce shopping cart
+  - name: Invoiced 
+    description: Invoicing platform
+  - name: Freshdesk 
+    description: Customer support software
+  - name: LaunchDarkly 
+    description: Toggle management for continuous delivery
+  - name: Call Loop 
+    description: Text messaging and calling software
+  - name: OneSignal 
+    description: Mobile and web push notifications
+  - name: Codacy 
+    description: Automated code reviews
+  - name: Justinmind 
+    description: Prototyping tool for web and mobile apps
+  - name: Genbook 
+    description: Online appointment scheduling
+  - name: Raklet 
+    description: Cloud platform for associations and non-profits
+  - name: DealMachine 
+    description: Real estate postcards
+  - name: Visyond 
+    description: Spreadsheet automation software
+  - name: naturalForms 
+    description: Mobile forms app
+  - name: Emburse 
+    description: Virtual cards for business expenses
+  - name: Docparser 
+    description: Document parsing software
+  - name: Snappy 
+    description: Customer service software
+  - name: Arlo 
+    description: Training management system for training providers
+  - name: Guideline 
+    description: 401(k) for small businesses
+  - name: Inbound Now 
+    description: Inbound marketing plugins
+  - name: Cartloom 
+    description: Simple cloud commerce
+  - name: Payable 
+    description: Contractor payments, benefits and taxes
+  - name: My Time 
+    description: Online booking solution for businesses
+  - name: Optimizely 
+    description: "The leading experimentation platform"
+  - name: Salesmate 
+    description: Powerful CRM software
+  - name: ActiveCampaign 
+    description: Email marketing and marketing automation
+  - name: BombBomb 
+    description: Video email from Gmail, mobile, and web
+  - name: Aha! 
+    description: "Roadmapping software for PMs"
+  - name: BizTalk360 
+    description: Server monitoring and analytics software
+  - name: Redbooth 
+    description: Task and project management software
+  - name: Pagescreen.io 
+    description: Track and monitor website changes
+  - name: Outwork 
+    description: Partner management platform
+  - name: AND CO 
+    description: Business software for freelancers and studios
+  - name: Silversiphon 
+    description: Sync Stripe bank feed with Xero
+  - name: RealScout 
+    description: Collaborative home search
+  - name: Paymill 
+    description: Secure online payment provider
+  - name: Audiense 
+    description: Consumer insights and engagement
+  - name: Klaviyo 
+    description: Email marketing platform
+  - name: Mailchimp 
+    description: Marketing platform for small businesses
+  - name: Quotient 
+    description: Proposal and estimation software
+  - name: SAS 
+    description: Business intelligence and data management
+  - name: Sympli 
+    description: Platform for building digital products
+  - name: Bugsnag 
+    description: Stability monitoring and error reporting
+  - name: SignUpAnywhere 
+    description: Capture email addresses offline
+  - name: Revue 
+    description: Newsletter tool for writers and publishers
+  - name: InkSoft 
+    description: Sales and production software
+  - name: Clorder 
+    description: Restaurant ordering system
+  - name: Rezora 
+    description: Real estate marketing software
+  - name: Schedulista 
+    description: Online scheduling software
+  - name: Cloudbeds 
+    description: Software for hospitality professionals
+  - name: Bookster 
+    description: Holiday rental system
+  - name: BlueJeans 
+    description: Video, audio, and web conferencing
+  - name: Vzaar 
+    description: Video hosting platform
+  - name: Keen 
+    description: User-facing metrics
+  - name: Amidship 
+    description: A small business platform
+  - name: Buffer 
+    description: Social media management platform
+  - name: Dropified 
+    description: Drop shiping software
+  - name: TeamUp 
+    description: Software for fitness studios
+  - name: Sensor Tower 
+    description: Mobile app store marketing intelligence
+  - name: ContentShelf 
+    description: Shopping cart software
+  - name: Mural 
+    description: Digital workspaces for visual collaboration
+  - name: Quaderno 
+    description: Sales tax return-ready reports in seconds
+  - name: Toggl 
+    description: Time tracking software
+  - name: Ionic 
+    description: App development platform
+  - name: Curated 
+    description: Curated newsletter platform
+  - name: Dropbox 
+    description: File hosting service
+  - name: Drift 
+    description: Conversational marketing platform
+  - name: Designity 
+    description: Design services
+  - name: Basecamp 
+    description: Project management software
+  - name: Pure Chat 
+    description: Live chat software for businesses
+  - name: Stitch Labs 
+    description: Operations management for brands
+  - name: Clowder 
+    description: Apps for businesses
+  - name: Survey Anyplace 
+    description: Interactive questionnaires
+  - name: ToutApp 
+    description: Sales email tracking
+  - name: ConceptShare 
+    description: Online proofing for marketing and creative teams
+  - name: Call Tracking Metrics 
+    description: Call tracking for businesses and agencies
+  - name: ShopTill-e 
+    description: Retail ePOS till system
+  - name: Loggly 
+    description: Log analysis and monitoring in the cloud
+  - name: Heroku 
+    description: Cloud application platform
+  - name: SugarCRM 
+    description: Customer relationship management software
+  - name: MRR 
+    description: SaaS metrics for your business
+  - name: LeadsBridge 
+    description: Lead generation platform
+  - name: Base CRM 
+    description: CRM software for sales acceleration
+  - name: Textografo 
+    description: Flowchart software and diagramming tool
+  - name: MyCloudCure 
+    description: A better way to learn
+  - name: Powerlinx 
+    description: Business-to-business matching platform
+  - name: ReAmaze 
+    description: Customer support software
+  - name: Figma 
+    description: Design, prototype, and feedback tool
+  - name: SignRequest 
+    description: Electronic signature solution
+  - name: Bedrock Data 
+    description: Query, visualize, and accelerate analytics
+  - name: Formsite 
+    description: Online form builder
+  - name: Cavintek Software 
+    description: Workflow automation software
+  - name: Paycove 
+    description: Automated invoicing integration for CRMs
+  - name: Mouseflow 
+    description: Session replay and heatmaps
+  - name: vidIQ 
+    description: Video marketing platform
+  - name: eSputnik 
+    description: Email marketing tools
+  - name: Salesmsg 
+    description: Two-way business texting software
+  - name: People HR 
+    description: HR software
+  - name: ProntoForms 
+    description: Smart mobile forms
+  - name: LeadIQ 
+    description: Prospect data in real time
+  - name: LiveChat 
+    description: Live chat software
+  - name: Leadformly 
+    description: High-converting Leadforms
+  - name: Postalytics 
+    description: Direct mail automation tool
+  - name: Slenke 
+    description: Project management software
+  - name: Nabooki 
+    description: Online scheduling software
+  - name: Nestmetric 
+    description: Automated machine learning for businesses
+  - name: Pro Agent Solutions 
+    description: Real estate team software
+  - name: Trippeo 
+    description: Travel and expense management
+  - name: LearningCart 
+    description: Platform to sell online courses
+  - name: Productboard 
+    description: Product management tool
+  - name: ActiveCollab 
+    description: Project management software
+  - name: Conveyour 
+    description: Team communication and collaboration software
+  - name: Trello 
+    description: Project management application
+  - name: CustomerLabs 
+    description: Digital marketing infrastructure platform
+  - name: Privy 
+    description: Exit intent popups and automated emails
+  - name: FileCloud 
+    description: Enterprise file sharing
+  - name: SimpleLegal 
+    description: Legal operations software
+  - name: Podio 
+    description: Work management solution
+  - name: Dubsado 
+    description: Business management software
+  - name: Klipfolio 
+    description: Business dashboard software
+  - name: Demio 
+    description: Webinar platform built for marketing
+  - name: DataCamp 
+    description: Learn data science online
+  - name: LemonStand 
+    description: eCommerce platform
+  - name: Favro 
+    description: Planning and collaboration app
+  - name: Botsify 
+    description: Artificial intelligent chatbots
+  - name: Mailjet 
+    description: The email solution for fast-moving teams
+  - name: MyWiFi Networks 
+    description: WiFi marketing platform
+  - name: SupportBee 
+    description: Ticketing system for customer service
+  - name: SignEasy 
+    description: Easy and secure electronic signatures
+  - name: Kounta 
+    description: Cloud-based point of sale software
+  - name: Essensys 
+    description: Workspace management software
+  - name: UserEcho 
+    description: Online customer support solution
+  - name: RAIDBOXES 
+    description: WordPress hosting for agencies
+  - name: Device Magic 
+    description: Mobile forms software
+  - name: Leadpages 
+    description: Landing page builder
+  - name: PageCloud 
+    description: Drag and drop website builder
+  - name: Instapage 
+    description: Landing page software
+  - name: Smore 
+    description: Beautiful newsletters in minutes
+  - name: Lever 
+    description: Recruiting software
+  - name: Qwirl 
+    description: Proposal, sales and marketing documents
+  - name: Webflow 
+    description: Responsive web design tool
+  - name: Ora 
+    description: Agile task management
+  - name: FormKeep 
+    description: Form endpoints for designers and developers
+  - name: Athento 
+    description: Intelligent document management
+  - name: Salesnet 
+    description: Customer relationship management software
+  - name: Expensify 
+    description: Expense management software
+  - name: Vision Helpdesk 
+    description: Customer service software
+  - name: VipeCloud 
+    description: Sales and marketing solution
+  - name: Toky 
+    description: Virtual phone software
+  - name: TPNI Engage 
+    description: Online marketing tools
+  - name: SonarQube 
+    description: Product for continuous code quality
+  - name: Samanage 
+    description: IT asset-management provider
+  - name: RentPost 
+    description: Online property management software
+  - name: OmniVirt 
+    description: Virtual reality advertising platform
+  - name: NeonCRM 
+    description: Nonprofit CRM built for growth
+  - name: Mojo 
+    description: Help desk and ticket tracking software
+  - name: Lusha 
+    description: B2B lead enrichment
+  - name: Instabot 
+    description: A chatbot for your website
+  - name: Gravity Forms 
+    description: WordPress forms plugin
+  - name: Goodbits 
+    description: Build great email newsletters in minutes
+  - name: Spotio 
+    description: Field sales software for sales reps
+  - name: Forms On Fire 
+    description: Online form builder
+  - name: FirstPromoter 
+    description: Affiliate and referral tracking for SaaS
+  - name: Code Climate 
+    description: Actionable metrics for engineering leaders
+  - name: Churn Buster 
+    description: Failed payment recovery
+  - name: Chartio 
+    description: Powerful analytics made simple
+  - name: CashNotify 
+    description: Monitor Stripe accounts from a Mac menu bar
+  - name: BugHerd 
+    description: The visual bug tracker
+  - name: Beanstalk 
+    description: Write, review and deploy code
+  - name: Aiva 
+    description: A mobile responsive pop-up CTA builder
+  - name: Volusion 
+    description: Shopping cart software
+  - name: Vendasta 
+    description: White-label marketing platform
+  - name: Trainerize 
+    description: Personal training software
+  - name: Timekit 
+    description: Automated scheduling software
+  - name: SugarSync 
+    description: Cloud file sharing
+  - name: Smoove 
+    description: Marketing automation platform
+  - name: Shopify 
+    description: Ecommerce software
+  - name: SamCart 
+    description: The simple way to sell online
+  - name: Salpo 
+    description: Business organisation and process management
+  - name: Saasu 
+    description: Online accounting software
+  - name: Ruler Analytics 
+    description: Call tracking and marketing attribution
+  - name: PUBLICFAST 
+    description: Influencer marketing platform
+  - name: PrestaShop 
+    description: E-commerce solution
+  - name: MOBIT 
+    description: SMS marketing automation software
+  - name: Leadberry 
+    description: B2B lead generation software
+  - name: Karma CRM 
+    description: Web-based small business CRM software
+  - name: Kameleoon 
+    description: Predictive personalization and A/B testing
+  - name: GroCRM 
+    description: Friendly CRM platform
+  - name: EvaluAgent 
+    description: Call centre quality assurance software
+  - name: Easypromos 
+    description: Giveaways, contests and promotions
+  - name: Createsend 
+    description: Powerful email marketing
+  - name: Commusoft 
+    description: Job management software for service companies
+  - name: CallRail 
+    description: Phone call analytics for direct marketing
+  - name: Assembla 
+    description: The most secure software development platform
+  - name: Appcelerator 
+    description: The mobile first platform
+  - name: AgoraPulse 
+    description: Social media management
+  - name: 10,000ft 
+    description: Project management software built for teams
+  - name: TutorCruncher 
+    description: Business management software
+  - name: Simple Practice 
+    description: Health practice management software
+  - name: Chargebee 
+    description: Recurring payments software
+  - name: SeviceBot 
+    description: Subscription billing optimized for SaaS
+  - name: SE Ranking 
+    description: All-inclusive cloud-based SEO software
+  - name: SeamlessDocs 
+    description: Empowering governments to go paperless
+  - name: restdb 
+    description: Simple online NoSQL database backend
+  - name: Rebrandly 
+    description: Link management platform
+  - name: Peakon 
+    description: Employee engagement platform
+  - name: OptimizePress 
+    description: Landing pages and membership sites
+  - name: Ninja Forms 
+    description: Flexible WordPress form builder
+  - name: MyBizzMail 
+    description: e-mail marketing software
+  - name: MakePlans 
+    description: Appointment booking and event registration
+  - name: Mad Mimi 
+    description: Email newsletter platform
+  - name: Kanbanize 
+    description: Kanban software for lean project management
+  - name: Jumplead 
+    description: Inbound marketing automation software
+  - name: iZooto 
+    description: Web push notifications
+  - name: InvoiceBus 
+    description: Online invoicing for creative professionals
+  - name: Inspirometer 
+    description: Meeting performance software
+  - name: HourStack 
+    description: Time tracking software
+  - name: Hootsuite 
+    description: Social media marketing dashboard
+  - name: Typeform 
+    description: Data collection tool for professionals
+  - name: GetSiteControl 
+    description: Lead generation widgets
+  - name: Formlets 
+    description: Online form creator
+  - name: Forestry.io 
+    description: Static CMS for Hugo and Jekyll
+  - name: Exceptionless 
+    description: Real-time exception reporting applications
+  - name: Evernote 
+    description: Note taking app
+  - name: Later 
+    description: Marketing platform for Instagram
+  - name: Databox 
+    description: Pull all of your KPIs into one place
+  - name: Cyclr 
+    description: SaaS integration toolkit for SaaS companies
+  - name: Chime.io 
+    description: Community management
+  - name: Callingly 
+    description: Lead response and phone sales automation
+  - name: ThoughtBuzz 
+    description: Social media intelligence platform
+  - name: Skuiq 
+    description: Sync POS and eCommerce
+  - name: Signority 
+    description: Document signing management
+  - name: Pathover 
+    description: Routing logistic software
+  - name: ManageFlitter 
+    description: Twitter management tool
+  - name: Boomerang 
+    description: Scheduled sending and email reminders
+  - name: Manychat 
+    description: Facebook Messenger bot
+  - name: LeadOutcome 
+    description: Marketing and sales automation
+  - name: Workona 
+    description: The missing desktop for the cloud
+  - name: Shift 
+    description: Emails and apps in one desktop app
+  - name: Allstacks 
+    description: Predictive analytics suite
+  - name: Spiral 
+    description: Omnichannel customer feedback with AI
+  - name: Balloon 
+    description: Idea meritocracy platform for teams
+  - name: Trainual 
+    description: The business playbook builder
+  - name: Osano 
+    description: Easy-to-use data privacy platform
+  - name: BillingPlatform 
+    description: Cloud-based billing software
+  - name: WalkMe 
+    description: Digital adoption platform
+  - name: Bambee 
+    description: Bambee is a platform offering an affordable solution to small and medium-sized businesses for hiring HR managers.
+  - name: Capchase 
+    description: Capchase is a fintech company that provides financial solutions to startups by allowing access to funds as they grow.
+  - name: Uniphore 
+    description: Uniphore is a customer service platform that is powered by AI and automation technologies.
+  - name: HubSpot 
+    description: HubSpot develops cloud-based, inbound marketing software that allows businesses to transform the way that they market online.
+  - name: Zendesk 
+    description: Zendesk is a customer service platform that develops a software to empower organization and customer relationships.
+  - name: Stripe 
+    description: Stripe is a developer-oriented commerce company helping small and large companies accept web and mobile payments.
+  - name: CrowdStrike 
+    description: CrowdStrike is a cybersecurity technology firm pioneering cloud delivered protection across endpoints, cloud workloads, identity and data.
+  - name: Atlassian 
+    description: Atlassian provides collaboration, development, and issue tracking software for teams.
+  - name: Datadog 
+    description: Datadog offers monitoring and analytics for cloud-based workflows.
+  - name: Figma 
+    description: Figma is a design platform for teams who build products together.
+  - name: DigitalOcean 
+    description: DigitalOcean provides a cloud platform to deploy, manage, and scale applications of any size.
+  - name: CircleCI 
+    description: CircleCI is a continuous integration and delivery platform that automates development workflows and IT operations.
+  - name: GitLab 
+    description: GitLab is the DevOps platform that empowers organizations to maximize the overall return on software development.
+  - name: DocuSign 
+    description: DocuSign helps small- and medium-sized businesses collect information, automate data workflows, and sign on various devices.
+  - name: Forethought 
+    description: Forethought provides customer service solutions that transform the customer experience with human-centered AI.
+  - name: Birdeye 
+    description: Birdeye is an all-in-one Experience Marketing platform for multi-location businesses.
+  - name: MongoDB 
+    description: MongoDB is a next-generation database that helps businesses transform their industries by harnessing the power of data.
+  - name: DataRails 
+    description: DataRails is a financial platform for spreadsheet management solutions for financial organizations.
+  - name: fabric 
+    description: fabric offers a headless e-commerce platform that enables companies to grow their online presence via its API-driven modular system.
+  - name: EdCast 
+    description: EdCast offers a unified SaaS platform powering end-to-end employee experience journeys, spanning learning, skilling and career mobility.
+  - name: Intercom 
+    description: Helping businesses build strong customer relationships with the Engagement OS.
+  - name: Pipefy 
+    description: Pipefy is a no-code process orchestration platform to easily automate workflows and manage business processes.
+  - name: PagerDuty 
+    description: PagerDuty is an operations performance platform delivering visibility and actionable intelligence across the entire incident lifecycle.
+  - name: Vendr 
+    description: Vendr is a developer of a buying platform used to help companies to purchase SaaS.
+  - name: monday.com 
+    description: Monday.com develops a project management tool intended to improve team management, communication, and productivity for businesses.
+  - name: Nasuni 
+    description: Nasuni is a provider of cloud file services that enables organizations to store, protect, share, and access all enterprise files.
+  - name: Icertis 
+    description: Icertis is an AI-powered contract management platform that ensures compliance and minimizes risk.
+  - name: Zuora 
+    description: Zuora provides cloud-based software on a subscription basis that helps companies launch, manage, and transform into a subscription business.
+  - name: Postman 
+    description: Postman is the collaboration platform for API development.
+  - name: Employment Hero 
+    description: Employment Hero is a cloud-based platform that helps businesses manage HR, payroll, and employee benefits.
+  - name: Kong 
+    description: Kong is the cloud connectivity company offering the industry-leading service connectivity platform designed for modern architectures.
+  - name: Cloudinary 
+    description: Cloudinary empowers companies to deliver visual experiences that inspire and connect by unleashing the full potential of their media.
+  - name: SEMrush 
+    description: SEMrush is a an online visibility management and content marketing SaaS platform.
+  - name: o9 Solutions 
+    description: O9 Solutions is a cloud-based business management platform powering digital transformations of integrated planning and operations.
+  - name: Amagi Media Labs 
+    description: Amagi Media Labs is a tech and media startup that facilitates the geographic targeting of TV advertisements.
+  - name: Juniper Square 
+    description: Juniper Square is transforming private equity with innovative software and solutions.
+  - name: Procore 
+    description: Procore is a software company that provides cloud-based construction management software.
+  - name: Five9 
+    description: Five9 is a cloud-based call center software company that specializes in sales, marketing, and customer service.
+  - name: Olo 
+    description: Olo is a SaaS digital ordering and delivery platform for restaurant brands.
+  - name: Cybersixgill 
+    description: Cybersecurity, Cyber Threat Intelligence, Deep & Dark Web Monitoring, SaaS
+  - name: E2open 
+    description: E2open is a logistic software platform that offers cloud-based supply chain management technology and services.
+  - name: Unqork 
+    description: Unqork is a no-code enterprise application platform that helps companies build, deploy, and manage complex applications.
+  - name: ThoughtSpot 
+    description: ThoughtSpot is a business intelligence platform that helps anyone explore, analyze, and share real-time business analytics data easily.
+  - name: StreamSets 
+    description: Streamsets is a DataOps platform for modern data integration.
+  - name: Elastic 
+    description: Elastic builds software to make data usable in real time and at scale for search, logging, security, and analytics use cases.
+  - name: Infor 
+    description: Infor provides enterprise software and services in the licensing, maintenance, and consulting industries.
+  - name: Narvar 
+    description: Narvar is a customer experience platform that helps retailers inspire long-term customer loyalty, at all steps of the post-purchase journey.
+  - name: Shopify 
+    description: Shopify is a cloud-based, multi-channel commerce platform designed for small and medium-sized businesses.
+  - name: Demandbase 
+    description: Demandbase specializes in account-based marketing offering AI-enabled ABM platform.
+  - name: Upwork 
+    description: Upwork is the world’s work marketplace, connecting millions of businesses with independent talent around the globe.
+  - name: Sysdig 
+    description: Sysdig is driving the standard for cloud and container security.
+  - name: Cornerstone OnDemand 
+    description: Cornerstone OnDemand offers talent management software that helps organizations in recruiting, training, and managing their people.
+  - name: ShipBob 
+    description: ShipBob is a global logistics company that offers an e-commerce fulfillment order platform for direct-to-consumer brands.
+  - name: Canopy 
+    description: Canopy is a cloud-based practice management platform that introduces online client surveys for auto-population of IRS forms and more.
+  - name: KeepTruckin 
+    description: KeepTruckin is an artificial intelligence-powered hardware and software company that serves businesses powering the physical economy.
+  - name: Check Technologies 
+    description: Check Technologies is a payroll infrastructure startup that offers software development services.
+  - name: OutSystems 
+    description: OutSystems is a low-code platform that enables businesses to develop, deploy, and manage enterprise-grade apps.
+  - name: Smartsheet 
+    description: Smartsheet is a cloud-based work management platform that empowers collaboration, drives better decision making, and accelerates innovation.
+  - name: OPEN 
+    description: We’re a neobanking platform that is fast changing the way business banking rolls
+  - name: Sumo Logic 
+    description: Sumo Logic is a log management and analytics service, transforms big data into sources of operations, security, and compliance intelligence.
+  - name: Slice 
+    description: Slice is a provider of tools for pizzerias to manage the digital side of their businesses.
+  - name: Drift 
+    description: Drift is a Revenue Acceleration platform that uses Conversational Marketing and Conversational Sales to help companies grow revenue.
+  - name: Duck Creek Technologies 
+    description: Duck Creek Technologies develops industry-specific software that helps insurance carriers to deploy and manage their products and services.
+  - name: Visier 
+    description: Visier is an HR analytics platform that offers cloud-based solutions for workforce analytics and workforce planning.
+  - name: Bill.com 
+    description: Bill.com is a provider of cloud-based software that simplifies and automates back-office financial operations.
+  - name: Domo 
+    description: Domo designs and delivers an executive management platform as a service to help executives manage their business.
+  - name: Illumio 
+    description: Illumio is a provider of a SaaS platform offering automated enforcement against cyberattacks.
+  - name: SmartRent 
+    description: SmartRent is an enterprise home automation and internet of things platform for the multifamily industry.
+  - name: Alert Logic 
+    description: Alert Logic provides Security-as-a-Service solutions that secure the application and infrastructure stack of the cloud.
+  - name: Totango 
+    description: Totango is a customer success company that develops a platform to track customer engagement and referrals.
+  - name: Zest AI 
+    description: Zest AI is a financial service company that makes software for credit underwriting.
+  - name: OTA Insight 
+    description: Empowering smarter revenue and distribution decisions
+  - name: New Relic 
+    description: New Relic is a digital intelligence company that delivers full-stack visibility and analytics to enterprises.
+  - name: Nintex 
+    description: Nintex enables enterprise IT professionals to more easily create and manage simple to sophisticated business processes.
+  - name: Phenom 
+    description: Phenom is a recruitment platform that leverages AI to help companies attract new talents.
+  - name: FullStory 
+    description: FullStory is a customer experience data app that captures customer experience data in one powerful and easy-to-use platform.
+  - name: Avalara 
+    description: Avalara develops a platform that automates the major steps of tax compliance, all in the cloud.
+  - name: Grow 
+    description: Grow is a Utah-based business intelligence dashboard software for small and medium businesses.
+  - name: UserTesting 
+    description: UserTesting is an on-demand human insight platform designed to improve customer insights.
+  - name: Amperity 
+    description: Amperity is an Intelligent Customer Data Platform that empowers global consumer brands by unlocking all their customer data.
+  - name: Yext 
+    description: Yext is a knowledge engine platform that helps brands deliver official answers.
+  - name: Near 
+    description: Near, the world’s largest source of intelligence on People, Places, and Products, is the global leader in Data Intelligence.
+  - name: MoEngage 
+    description: MoEngage is an internet company that features cloud-based marketing services for consumer businesses.
+  - name: Kaseya 
+    description: Kaseya is an automation software provider that offers remote management software for the information technology industry.
+  - name: Contentful 
+    description: Contentful offers a headless content management system that helps organizations deliver content across channels.
+  - name: Druva 
+    description: Druva delivers a SaaS-based platform to protect and manage enterprise data across endpoint, data center and cloud workloads.
+  - name: MindTickle 
+    description: MindTickle is a software company that offers sales readiness and enablement tools for businesses.
+  - name: Fresha 
+    description: Fresha provides an online platform for booking beauty and wellness appointments with local businesses.
+  - name: Hootsuite 
+    description: Hootsuite is a platform for managing social media programs across multiple social networks.
+  - name: Glooko 
+    description: Glooko offers a Software-as-a-Service (SaaS) application for Diabetes Management.
+  - name: Xero 
+    description: Xero is a suite of online accounting software for small businesses, accountants, and bookkeepers.
+  - name: Peek 
+    description: Peek is a booking software and marketplace for delightful things to do such as wine tours, watersports, skydiving, and art classes.
+  - name: Tanium 
+    description: Tanium is a security and systems management platform allowing real-time data collection at an enterprise scale.
+  - name: Medallia 
+    description: Medallia provides SaaS platform focused on customer experience management.
+  - name: 7shifts 
+    description: 7shifts is an easy-to-use labor management platform, built just for restaurants.
+  - name: FloQast 
+    description: FloQast is a provider of an accounting workflow automation platform.
+  - name: PayFit 
+    description: PayFit offers technology that simplifies and automates payroll and HR processes for small and medium-sized businesses.
+  - name: Carto 
+    description: Carto is a platform that turns spatial data into an efficient delivery route, better behavioral marketing, and strategic store placements.
+  - name: PointClickCare 
+    description: PointClickCare develops web-based products and services to help long-term care providers manage the complete lifecycle of resident care.
+  - name: Infobip 
+    description: Infobip specializes in omnichannel engagement powering a range of messaging channels, tools, and solutions for advanced
+  - name: Vidyard 
+    description: Vidyard is a video marketing platform, enabling customers to derive information on viewer-behavior for marketing automation systems and CRM.
+  - name: Funnel 
+    description: Funnel designs and develops software/platforms that help marketers automate their data collection for reporting and analysis.
+  - name: Zenefits 
+    description: Zenefits delivers a complete, all-mobile HR experience for small and medium businesses.
+  - name: Datto 
+    description: Datto provides backup, recovery, and business continuity solutions to managed service providers worldwide.
+  - name: AgentSync 
+    description: AgentSync is a Producer Management Platform used for broker onboarding, licensing, and compliance requirements.
+  - name: Bringg 
+    description: Bringg is a data-led delivery and fulfillment platform that offers last-mile delivery solutions for retailers and logistics providers.
+  - name: Signifyd 
+    description: Signifyd is a provider of an enterprise-grade fraud technology solution for e-commerce stores.
+  - name: Sinch 
+    description: Sinch is a cloud communications company that connects businesses and customers through tools that enable personal engagement.
+  - name: SendGrid 
+    description: SendGrid is a cloud-based customer communication platform that drives engagement and business growth.
+  - name: HighRadius 
+    description: HighRadius is a SaaS company that develops an artificial intelligence-based order-to-cash and treasury management software.
+  - name: Mixpanel 
+    description: Mixpanel is an analytics platform that helps companies measure data and build better products through data.
+  - name: LogicMonitor 
+    description: LogicMonitor provides IT observability and monitoring for physical, virtual, and cloud-based IT infrastructures.
+  - name: Copper 
+    description: Copper offers customer relationship management solutions for companies that use Google applications.
+  - name: Anvyl 
+    description: Anvyl is a technology platform that uses data analytics to reinvent supply chain processes, making products better, smarter, and easier.
+  - name: Pantheon 
+    description: Pantheon is the WebOps platform where marketers, designers, and developers drive results with WordPress and Drupal websites.
+  - name: Weave 
+    description: Weave makes communicating with customers easier for businesses by integrating features like texting, phone service, fax, and reviews.
+  - name: Showpad 
+    description: The best thing to ever happen to your sales team
+  - name: AuditBoard 
+    description: AuditBoard is the leading cloud-based platform transforming how enterprises manage risk.
+  - name: Passport 
+    description: Passport specializes in enterprise business applications and payments for parking and transportation.
+  - name: Rubicon 
+    description: Rubicon is a software platform that provides smart waste and recycling solutions for businesses and governments worldwide.
+  - name: Reputation 
+    description: Reputation improves customer experience (CX) through its feedback-to-action platform.
+  - name: Go1 
+    description: GO1 allows companies to upscale their workforce with on-demand training and a dynamic content-driven platform.
+  - name: FarMart 
+    description: FarMart is a micro-SaaS platform that helps food businesses source high quality produce at affordable prices
+  - name: Terminus 
+    description: Terminus is a marketing platform used to target companies, engage decision-makers on their terms, and accelerate pipeline velocity.
+  - name: Breedr 
+    description: Breedr is a productivity and marketing platform that’s transforming the livestock supply-chain.
+  - name: Guru 
+    description: Guru is a knowledge management solution that keeps customer-facing teams up-to-date, consistent, and confident.
+  - name: Oyster® 
+    description: Oyster is a Distributed HR platform that empowers companies to hire, pay, and care for talented teammates regardless of location.
+  - name: Meltwater 
+    description: Meltwater is a media Intelligence & social listening tools for measuring, managing and magnifying corporate reputation.
+  - name: comScore 
+    description: comScore is a cross-platform measurement company that measures audiences, brands, and consumer behavior.
+  - name: Catalytic 
+    description: Catalytic offers the easiest platform for digital transformation and the automation of knowledge work.
+  - name: Enboarder 
+    description: Enboarder is a developer of an onboarding platform that allows employers to create engaging experiences for new employees.
+  - name: Bynder 
+    description: Bynder is a provider of a digital asset management (DAM) platform designed to offer a smart way to find and share creative files.
+  - name: Cognite 
+    description: Cognite develops an industrial IoT data platform that enables digital transformation of heavy-asset industries.
+  - name: MicroStrategy 
+    description: MicroStrategy provides enterprise software for business intelligence, mobile intelligence, and network applications.
+  - name: Cyara 
+    description: "Customer Experience Assurance Platform. Cloud based Outside-in test automation & monitoring for IVR, digital and omni-channel"
+  - name: Contentstack 
+    description: Contentstack develops a cloud based content management system intended to power omnichannel content.
+  - name: Acquia 
+    description: Acquia specializes in providing cloud-based digital experience management solutions.
+  - name: InVision 
+    description: InVision is the visual collaboration platform powering the world’s smartest companies.
+  - name: BrowserStack 
+    description: BrowserStack is a software testing platform powering over two million tests every day across 15 global data centers.
+  - name: OwnBackup 
+    description: OwnBackup provides backup and recovery solutions for companies that use Salesforce.
+  - name: Payrix 
+    description: Payrix is on a mission to be the global leader in embedded payments for vertical software businesses.
+  - name: HeyJobs 
+    description: "HeyJobs is a career platform matching the worlds essential talent to opportunities."
+  - name: Movable Ink 
+    description: Movable Ink activates any data into personalized content in any customer engagement.
+  - name: Conductor 
+    description: Conductor is a content intelligence platform that enables marketers to create great content, drive qualified traffic, and increase ROI.
+  - name: HiBob 
+    description: Hibob offers a mission critical, cloud-based human resources platform that allows companies to streamline HR processes and engage top talent
+  - name: OpenGov 
+    description: OpenGov is the leader in modern cloud software for our nation’s cities, counties, and state agencies.
+  - name: HoneyBook 
+    description: HoneyBook is a business management platform creating tools to help creative entrepreneurs run their business on their own terms.
+  - name: Inspectorio 
+    description: "Inspectorios SaaS solution improves quality, compliance and on-time delivery with actionable insights and data-driven collaboration."
+  - name: FinancialForce 
+    description: FinancialForce develops cloud back-office applications for salesforce CRM.
+  - name: Workboard 
+    description: Workboard provides an enterprise results management platform designed to automate business reviews.
+  - name: HireEZ 
+    description: HireEZ offers AI powered recruitment software that allows intelligent sourcing, engagement, analysis, and integration on existing platforms.
+  - name: Deputy 
+    description: Deputy is an employee management tool, simplifying scheduling, timesheets, tasks and workplace communication.
+  - name: Flexe 
+    description: Flexe delivers omnichannel logistics programs for eCommerce fulfillment, retail distribution, same-day delivery, and network capacity.
+  - name: Blue Yonder 
+    description: Blue Yonder is a digital supply chain and omni-channel commerce fulfillment platform.
+  - name: Orbital Insight 
+    description: Orbital Insight builds SaaS technology to understand what happens on and to the Earth with AI and machine learning
+  - name: Conga 
+    description: Conga’s suite of solutions creates more efficient organizations by simplifying and automating data, documents, contracts and reporting.
+  - name: Interos 
+    description: Interos helps companies manage risk and continuously monitor their supply chain and business relationships to avoid disruptions.
+  - name: Ivalua 
+    description: Ivalua provides web-based spend management solutions that offers a modular suite covering the Spend Management spectrum.
+  - name: Optimizely 
+    description: Optimizely is known for content, commerce and optimization with our Digital Experience Platform (DXP)
+  - name: BlackLine 
+    description: BlackLine offers scalable applications that automate the financial close and other accounting processes.
+  - name: Plume Design 
+    description: Plume is a SaaS platform that provides the delivery of technological services for connected homes.
+  - name: SmartRecruiters 
+    description: SmartRecruiters is an end-to-end recruiting platform that helps companies with talent acquisition.
+  - name: Karat 
+    description: Karat develops an interviewing cloud platform to solve the multi-decade global shortage of software engineers.
+  - name: Trifacta 
+    description: Trifacta delivers an intelligent, collaborative data engineering cloud platform to transform data, ensure quality, and automate pipelines.
+  - name: Glia 
+    description: Glia is a digital customer service provider connecting online retailers with customers through voice, video, and collaborative browsing.
+  - name: Crossbeam 
+    description: Crossbeam is a collaborative data platform that helps companies build more valuable partnerships.
+  - name: Zimyo 
+    description: Zimyo is an employee experience platform that empowers organizations to manage and retain great talent!
+  - name: Wunderkind (formerly BounceX) 
+    description: "Wunderkind enables the worlds top brands to better recognize their customers online, providing 1-to-1 marketing at scale."
+  - name: Mews 
+    description: Mews is an innovative hospitality management cloud platform that empowers the modern hotelier to provide remarkable guest experiences.
+  - name: ZipRecruiter 
+    description: ZipRecruiter is an online employment marketplace, connecting millions of employers and job seekers through mobile and email services.
+  - name: TouchBistro 
+    description: TouchBistro is an iPad-based restaurant point-of-sale system enabling owners to manage reservations and take orders instantly.
+  - name: LeafLink 
+    description: LeafLink is a wholesale management platform that connects cannabis brands and retailers.
+  - name: NewStore 
+    description: NewStore operates a platform for retailers to run their stores on the iPhone.
+  - name: commercetools 
+    description: commercetools is an enterprise commerce company providing modern cloud-native API-lead offerings.
+  - name: Lokalise 
+    description: Lokalise is a translation management system built for agile teams who want to automate their localization process.
+  - name: Ceridian 
+    description: Ceridian helps organizations maximize their human, financial, and technology resources.
+  - name: Spreedly 
+    description: Spreedly is cloud-based payment infrastructure that allows businesses to work with multiple payment gateways simultaneously.
+  - name: Torch 
+    description: Torch is a leadership development platform that provides coaching, software, and feedback to raise performers to the next level.
+  - name: Templafy 
+    description: Templafy is a B2B Software-as-a-Service platform that provides services for business document creation.
+  - name: Updater 
+    description: Updater is a technology company platform that develops tools to help consumers relocate more easily.
+  - name: Zenoti 
+    description: Zenoti is a provider of cloud-based software for the spa and salon industries.
+  - name: Sauce Labs 
+    description: Sauce Labs provides cloud-based testing for mobile and web applications.
+  - name: Bluecore 
+    description: Bluecore uses predictive intelligence to automatically connect shoppers to products, content, and offers, wherever they are.
+  - name: Assent Compliance 
+    description: Assent Compliance provides cloud-based SaaS solutions for product compliance, corporate social responsibility, and vendor management.
+  - name: 8x8 
+    description: 8x8 offers secure and reliable cloud-based, enterprise-class business phone systems, unified communications, and contact center solutions.
+  - name: BrightEdge 
+    description: BrightEdge, an SEO platform delivering an uplifted ROI, enables marketers to increase revenue from organic search.
+  - name: Built Technologies 
+    description: Built Technologies is an enterprise technology company that provides cloud-based construction lending software.
+  - name: LeanData 
+    description: LeanData is a platform that enables revenue teams (marketing, sales, customer, and partner ops) to manage all go-to-market motions.
+  - name: Beamery 
+    description: Beamery is a talent acquisition, engagement, and retention platform that manages sourcing, hiring, and retaining of people.
+  - name: Delphix 
+    description: Delphix provides an intelligent data platform that accelerates digital transformation for companies around the world.
+  - name: BetterCloud 
+    description: Transform employee experience, centralize data protection, and maximize operational efficiency.
+  - name: Kyriba 
+    description: Kyriba offers SaaS-based treasury solutions that enable treasury departments to plan for market volatility, regulation, and opportunities.
+  - name: Crayon 
+    description: Crayon is an intelligence platform that helps businesses track, analyze, and act based on market movements.
+  - name: Expel 
+    description: Expel is a SOC-as-a-service platform that provides security monitoring and response for cloud, hybrid, and on-premises environments.
+  - name: LogicGate 
+    description: LogicGate builds technology that allows businesses to automate and track disorganized processes in risk and compliance.
+  - name: OneSignal 
+    description: OneSignal is a customer messaging and engagement platform that allows businesses to create meaningful customer connections.
+  - name: Sitetracker 
+    description: Sitetracker is a SaaS platform for deploying, operating, and servicing critical infrastructure and technology.
+  - name: Zylo 
+    description: Discover, optimize and govern your SaaS portfolio while elevating the employee experience.
+  - name: JustClean 
+    description: JustClean is a laundry technology company that provides B2B and B2C services including marketplace applications, SaaS, and logistics.
+  - name: ReliaQuest 
+    description: ReliaQuest provides a SaaS security platform designed to minimize data loss and business disruptions.
+  - name: PatientPop 
+    description: PatientPop is the only complete practice growth solution that empowers healthcare providers to thrive in the digital age.
+  - name: TigerConnect 
+    description: TigerConnect is a healthcare collaboration platform that streamlines clinical workflows and systems.
+  - name: PandaDoc 
+    description: PandaDoc enables users to create, deliver, and manage their teams’ quotes, proposals, contracts, and other sales collateral.
+  - name: Taulia 
+    description: Taulia is a FinTech startup that provides working capital management and electronic invoicing services for supply chain companies.
+  - name: 360insights 
+    description: 360insightsprovides a SaaS-based platform that enables manufacturers and distributors to manage their incentives programs.
+  - name: Fuze 
+    description: Formerly ThinkingPhones, Fuze is a cloud-based communications and collaboration solution that connects organizations across devices.
+  - name: Cognism 
+    description: Cognism is a B2B sales acceleration software company that provides a marketing and sales acceleration solution.
+  - name: CloudBees 
+    description: CloudBees develops a cloud-based platform that provides end-to-end automated software delivery.
+  - name: Platform9 
+    description: Platform9 is the world’s Number 1 open distributed cloud service, offering the power of the public cloud on infrastructure of your choice
+  - name: Lob 
+    description: Lob provides direct mail and address verification APIs which allows businesses to send personalized mail to their customers.
+  - name: Chargebee 
+    description: Chargebee provides subscription and recurring billing systems for SaaS and e-commerce businesses.
+  - name: Tagboard 
+    description: Tagboard is a software platform aggregating social media content from multiple networks for end-users, brands and marketers.
+  - name: Sense 
+    description: Sense is a smart talent engagement and communication platform that helps companies find, recruit, and deploy talent.
+  - name: AvidXchange 
+    description: AvidXchange is a software company specializing in automating invoice and payment processes for mid-market businesses.
+  - name: Splash 
+    description: Splash provides marketers with tools to create and execute virtual, in-person, and hybrid event programs.
+  - name: Crisp 
+    description: Crisp leverages the cloud to connect and analyze retail data sources in real-time, providing actionable insights to businesses.
+  - name: JazzHR 
+    description: JazzHR is easy, powerful, and affordable recruiting software purpose-build for SMBs. SaaS ATS for masses.
+  - name: Duetto 
+    description: "Duetto is hospitalitys only Revenue Strategy Platform, delivering SaaS applications that help hotels increase conversion and revenue."
+  - name: CloudPay 
+    description: CloudPay provides managed global payroll and treasury services to multinational organizations through a unified global payroll solution.
+  - name: HireVue 
+    description: "HireVue is Hiring Intelligence Platform delivers the best talent, faster with video interviews and AI-driven pre-hire assessments."
+  - name: Housecall Pro 
+    description: Housecall Pro is a developer of a mobile software platform used to connect back-end business operations and homeowners.
+  - name: Red Canary 
+    description: Red Canary is a cybersecurity technology company delivering cloud based security services.
+  - name: Klue 
+    description: Klue is an AI competitive intelligence platform that enables competitor research and delivery of sales battle cards to B2B Sales teams.
+  - name: One Concern 
+    description: One Concern provides a resilience-as-a-service solution that helps customers uncover, prepare for, and mitigate unpredictable disaster risk.
+  - name: Cobalt 
+    description: Cobalt is a PTaaS platform that transforms traditional pentesting into a data-driven vulnerability management engine.
+  - name: Logz.io 
+    description: Logz.io provides a scalable and intelligent machine data analytics platform built on ELK and Grafana for monitoring modern applications.
+  - name: GoodData 
+    description: GoodData is an analytics company that provides access to business reporting, dashboards, and ad hoc analytics to customers.
+  - name: Instant Teams 
+    description: Saas Remote Team Marketplace
+  - name: Harness 
+    description: Harness is a Continuous Delivery as-a-Service platform for engineering and DevOps teams to release applications into production.
+  - name: Recurly 
+    description: Subscription billing management SaaS platform powering 2,000+ brands including Sling TV, BarkBox, Asana, FabFitFun, Cinemark & Twitch
+  - name: SourceDay 
+    description: SourceDay is a modern purchase order management platform for syteline, epicor, and netSuite ERPs.
+  - name: Shogun 
+    description: Shogun is an E-commerce platform that helps brands create unique buying experiences and optimize their online stores.
+  - name: Appcues 
+    description: Appcues provides a no-code platform helping teams to track and analyze product usage and publish in-app tours, announcements, and surveys.
+  - name: Customer.io 
+    description: Customer.io enables users to send newsletters to selected segments of customers using their website data.
+  - name: Mavenlink 
+    description: Mavenlink is a transformative SaaS platform for the modern professional services organization.
+  - name: Provi 
+    description: Provi is a communication platform that simplifies the operations for bars, restaurants, and retailers in ordering booze.
+  - name: Reltio 
+    description: Reltio provides a cloud-native, SaaS data platform that synthesizes multi-source, complex data into a single source of trusted information.
+  - name: CreatorIQ 
+    description: The most trusted software to unify and power advanced influencer marketing for the world’s most innovative enterprises
+  - name: Panorama Education 
+    description: Panorama Education brings the power of data to education through a SaaS platform used by hundreds of school districts across the US.
+  - name: AppZen 
+    description: AppZen is an artificial intelligence platform for modern finance teams.
+  - name: Uptake Technologies 
+    description: Uptake Technologies designs and develops enterprise software.
+  - name: Presto 
+    description: Presto is the leading provider of customer experience and labor productivity software to restaurant enterprises.
+  - name: Acumatica 
+    description: Acumatica is a provider of cloud business management software that empowers small and mid-size businesses to unlock their potential.
+  - name: Sureify 
+    description: Sureify is an industry leading SaaS platform for Life and Annuity companies.
+  - name: WP Engine 
+    description: WP Engine is a managed WordPress hosting platform.
+  - name: Qualified.com 
+    description: Qualified.com is a B2B marketer that allows buyers and sales reps to connect through real-time website conversations.
+  - name: BRYTER 
+    description: BRYTER is a no-code software platform that automates and helps its users develop and build digital applications.
+  - name: Emotive 
+    description: Emotive is a conversational texting platform for eCommerce brands, enabling two way text message communication at scale.
+  - name: Transfix 
+    description: Transfix is a freight marketplace connecting shippers to a national network of reliable carriers.
+  - name: Vena Solutions 
+    description: Vena connects people, existing systems, and data to power finance-led business planning and real-time reporting.
+  - name: Plentific 
+    description: Plentific is a SaaS platform that provides smart property management solutions for landlords and property managers.
+  - name: CareCloud 
+    description: CareCloud, Inc., formerly MTBC, provides cloud-based technology-enabled software and services for medical practices in the US.
+  - name: Blueshift 
+    description: Blueshift offers the SmartHub CDP, which helps brands deliver relevant and connected experiences across every customer interaction.
+  - name: Checkmarx 
+    description: Checkmarx is a global leader in application security.
+  - name: Canary 
+    description: "Canary is a NYC-based company and a subsidiary of Smartfrog & Canary Group, a Consumer IoT SaaS business and one of the fastest-growing Consumer IoT category leaders. The mission is to enhance consumer’s lives by making modern technologies useful, easy, affordable and safe – IoT for everyone."
+  - name: Introhive 
+    description: Introhive offers a SaaS platform that helps organizations increase revenues and improve customer experience management.
+  - name: SafetyCulture 
+    description: SafetyCulture is the operational heartbeat of working teams around the world.
+  - name: Namely 
+    desc iption: Namely is an all-in-one platform that manages all HR data in one place, with personalized service to help companies get better and faster.
+  - name: Glob lity 
+    description: Globality revolutionizes how businesses buy and sell services by matching the best provider at the right price for every project.
+  - name: Filevine 
+    description: Filevine offers a cloud-native SaaS, combining case management with intelligent communication to help firms be more efficient than ever.
+  - name: ThousandEyes 
+    description: ThousandEyes empowers businesses to see, understand, and improve the experience for every user and every application over any network.
+  - name: FreightWaves 
+    description: FreightWaves is a data and content forum that provides market participants with near-time analytics.
+  - name: Extreme Reach 
+    description: Extreme Reach is a tech platform for video ad campaign workflow that delivers ads to every screen and device on time and in perfect quality.
+  - name: Betterworks 
+    description: Performance management and goal-setting solutions designed to align the global enterprise - Built for visionary HR
+  - name: Q4 
+    description: Q4 is a SaaS platform that provides communication and intelligence solutions to investor relations professionals.
+  - name: Apptio 
+    description: Apptio is a provider of SaaS-based Technology Business Management (TBM) solutions for managing businesses in the IT field.
+  - name: ThreeKit 
+    description: ThreeKit is a 3D product configuration and visualization platform that enables brands to create and manage beautiful visuals at scale.
+  - name: iCIMS 
+    description: iCIMS is a talent cloud company that helps organizations to attract, engage, hire, and advance the right talent.
+  - name: Attest 
+    description: Attest is a consumer research platform that delivers consumer data that drive predictable and repeatable growth to businesses.
+  - name: PartnerStack 
+    description: PartnerStack enables companies to accelerate growth with partnerships
+  - name: Nextiva 
+    description: Nextiva is a leading business communications company that helps organizations simplify and enhance their customer relationships.
+  - name: Cypress.io 
+    description: Cypress.io develops a front-end automated testing application for running unit and integration tests in a browser.
+  - name: Mason 
+    description: Smarter from start to finish with Mason.™
+  - name: Dealpath 
+    description: Dealpath is the intelligent software solution empowering smart investment decisions with data-driven insights and digital collaboration
+  - name: UpKeep 
+    description: UpKeep is a platform developed for technicians and maintenance workers that provides them with a computerized maintenance management system.
+  - name: Xactly 
+    description: Xactly is the pure-play provider of cloud-based, incentive compensation software.
+  - name: Total Expert 
+    description: Total Expert is a SaaS company that develops enterprise-grade marketing operating system (MOS) built for financial services organizations.
+  - name: ConcertAI 
+    description: ConcertAI is an AI-powered SaaS data company in healthcare that develops medical research tool in oncology.
+  - name: Xepelin 
+    description: Xepelin provides financial services for small and medium-sized business in Latin America.
+  - name: Jobvite 
+    description: Jobvite provides end-to-end talent acquisition software and services that increase recruiting quality, speed, and cost-effectiveness.
+  - name: Sprout Social 
+    description: Sprout Social provides a platform for businesses to manage social media engagement, publishing and analytics.
+  - name: Sabre Corporation 
+    description: Sabre Corporation is a U.S.-based travel technology company providing software solutions to the travel industry.
+  - name: AlayaCare 
+    description: AlayaCare delivers an end-to-end home health care software platform and hardware ecosystem for patients.
+  - name: Workhuman 
+    description: Workhuman® is the world’s fastest-growing integrated Social Recognition® and Continuous Performance Management platform.
+  - name: Tetrate 
+    description: Tetrate provides enterprise-ready service mesh for all workloads and all environments.
+  - name: Gladly 
+    description: Gladly is reinventing customer service with a customer service platform that centers around customers, not cases, across any channel.
+  - name: CCC Information Services 
+    description: CCC Information Services help companies improve their claims management process through better decision-making.
+  - name: parcelLab Inc. 
+    description: ParcelLab is an Operations Experience Management platform that transforms complex data into intelligent solutions.
+  - name: BillingPlatform 
+    description: BillingPlatform provides a cloud-based platform that simplifies complex billing, automating quote-to-cash processes.
+  - name: SevenRooms 
+    description: SevenRooms is a guest experience and retention platform for the hospitality industry.
+  - name: Exotel 
+    description: Exotel is a SaaS company with full stack customer engagement, including contact center software, communications API, and conversational AI.
+  - name: When I Work 
+    description: When I Work is an employee scheduling and time tracking platform designed for shift-based teams.
+  - name: Leadspace 
+    description: Leadspace is a B2B customer data platform that drives personalized customer engagement for sales and marketing.
+  - name: SirionLabs 
+    description: SirionLabs offers a SaaS enterprise contract management (CLM) platform to help enterprises manage the contracting lifecycle.
+  - name: Hubble 
+    description: A platform to search, set up, and manage your hybrid workplace
+  - name: LeadIQ 
+    description: LeadIQ is a prospecting platform that makes lead management and sales prospecting simple.
+  - name: Entrata 
+    description: Entrata provides software to the property management industry.
+  - name: Loopio 
+    description: "Loopio is RFP Response Software enables enterprises supercharge their process of responding to RFPs, RFIs, and Security Questionnaires"
+  - name: Stensul 
+    description: Stensul is an email creation platform that gives enterprise marketers the power to generate custom emails while ensuring brand governance.
+  - name: Mendix 
+    description: Mendix is the fastest and easiest high-productivity platform to create and continuously improve multi-channel applications at scale.
+  - name: TrustRadius 
+    description: TrustRadius is a provider of an online review site used to offer business technology and software reviews.
+  - name: Ease 
+    description: Ease is a benefits administration software designed for small businesses, insurance brokers, and insurance carriers.
+  - name: Conversica 
+    description: Conversica creates intelligent virtual assistants to serve as virtual team members.
+  - name: Flare 
+    description: Flare is a financial service company that offers paperless onboarding, employee benefits, and employee management.
+  - name: Aria Systems 
+    description: Aria provides a cloud-based monetization platform to help enterprises grow recurring revenue businesses with an agile billing system.
+  - name: ThoughtTrace 
+    description: ThoughtTrace is a Houston-based software company.
+  - name: Parchment 
+    description: Parchment enables learners, educators, associations, and employers to securely send and receive academic credentials online.
+  - name: Workable 
+    description: Workable is the world’s leading hiring platform, where companies find, evaluate and hire better candidates, faster.
+  - name: Reynen Court 
+    description: Reynen Court enables law firms and corporate legal departments to speed their adoption of AI and other new technologies.
+  - name: Jump Capital 
+    description: Jump Capital is a venture capital firm specializing in Series A and B expansion stage investments in technology and software.
+  - name: Happay 
+    description: Happay is an AI-powered business expense management software that enables businesses to automate their expense management process.
+  - name: Privitar 
+    description: Privitar offers a data privacy platform that protect their customers’ sensitive personal data and to deliver comprehensive data privacy.
+  - name: Evernote 
+    description: Evernote is a suite of software and services that allow users to capture, organize, and find information across multiple platforms.
+  - name: eVisit 
+    description: Evisit is a telemedicine patient engagement platform for SMB healthcare practices.
+  - name: Mekari 
+    description: Mekari is a SaaS company based in Indonesia. Products include Talenta, Jurnal, Qontak, and KlikPajak.
+  - name: Splashtop 
+    description: Splashtop is a provider of remote-desktop support software for business, MSPs, IT, helpdesks, and schools.
+  - name: Aurora Solar 
+    description: Aurora Solar is a SaaS company that uses aerial imagery to assess solar installation projects.
+  - name: Outrider 
+    description: Autonomous yard operations for logistics hubs
+  - name: Zencity 
+    description: Leading global community engagement SaaS technology platform for local governments
+  - name: Benevity 
+    description: Benevity is a Calgary-based company that provides a community investment solution by offering donation and grant management platforms.
+  - name: Appier 
+    description: Appier is a Taipei-based startup providing an AI powered platform to brands and retailers to help increase customer engagement.
+  - name: Crelate 
+    description: Crelate is Talent Relationship Management, Paired with Simple, Flexible Applicant Tracking, Delivered with White-Glove Service
+  - name: Reachdesk 
+    description: Reachdesk is a direct mail and corporate gifting software platform for B2B companies.
+  - name: CipherHealth 
+    description: CipherHealth develops and implements SaaS based care-coordination solutions to improve healthcare.
+  - name: BigCommerce 
+    description: BigCommerce is a SaaS provider for merchants running online businesses.
+  - name: WebEngage 
+    description: Most loved user retention platform for consumer businesses. CDP, Analytics, Campaign Management & Personalization - all in one dashboard!
+  - name: Tigera 
+    description: Active, zero-trust based security for cloud-native applications
+  - name: SecureAuth 
+    description: SecureAuth is the leader in cloud IAM, empowering organizations to protect identities without compromise.
+  - name: Catalant 
+    description: Catalant is a software company that provides global enterprises with software solutions to access business expertise on demand.
+  - name: Impartner 
+    description: Impartner delivers robust SaaS-based partner relationship management and marketing automation platform solutions.
+  - name: eFounders 
+    description: eFounders is the startup studio building the future of work
+  - name: Perforce Software 
+    description: "Perforce Software is the most flexible and scalable collaboration and version control platform."
+  - name: Planful 
+    description: Planful provides a proven, scalable platform that accelerates reporting, analytics, financial planning, and close processes.
+  - name: Suzy 
+    description: Suzy is a technology platform that harnesses collective insights from millions of consumers worldwide to deliver real-time intelligence.
+  - name: MetricStream 
+    description: MetricStream provides solutions for quality management, regulatory compliance, risk management, and corporate governance.
+  - name: Fleetio 
+    description: Fleetio is a web-based fleet management system that helps businesses get more from their moving assets.
+  - name: Whistic 
+    description: Whistic enables users to conduct and respond to security reviews on a single platform to grow with their needs.
+  - name: Helpshift 
+    description: Helpshift is a conversational customer service platform that leverages AI, bots, and messaging-based communication.
+  - name: Paycor 
+    description: Paycor is a provider of online payroll processing, human resource management services, and timekeeping software to help businesses.
+  - name: OneLogin 
+    description: OneLogin is a cloud identity and access management solution that enables enterprises to secure all apps for their users on all devices.
+  - name: Data.world 
+    description: Data.world is the cloud-native data catalog platform.
+  - name: Descartes Labs 
+    description: Optimizing sustainable sourcing, commodity price forecasting, & mineral exploration through the automated analysis of geospatial data
+  - name: HappyCo 
+    description: HappyCo is taking traditional paper based processes out of the dark ages.
+  - name: Accela 
+    description: Accela provides market-leading solutions that help governments to modernize and build thriving communities.
+  - name: Kaltura 
+    description: Kaltura develops video SaaS solutions for enterprises of all industries.
+  - name: Chord 
+    description: Chord offers a commerce-as-a-service software that provides businesses with technology and products to access meaningful data.
+  - name: Fairmarkit 
+    description: Fairmarkit is an intelligent sourcing platform that empowers organizations to more efficiently purchase the goods and services they need.
+  - name: Duo Security 
+    description: Duo Security provides security software products and services.
+  - name: Snagajob 
+    description: Snagajob is the platform for hourly work, with 100 million registered hourly workers and 470,000 employer locations nationwide.
+  - name: Sanity 
+    description: Sanity is a platform for structured content that lets teams build digital experiences.
+   

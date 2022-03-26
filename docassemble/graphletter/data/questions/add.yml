@@ -53,6 +53,8 @@ modules:
   - .load_data
   - .progressivedisclosure
   - docassemble.ALToolbox.misc
+  - .countries
+  - .products
 ---
 features:
   css: docassemble.ALToolbox:collapse_template.css

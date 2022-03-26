@@ -4,6 +4,9 @@ metadata:
   short title: |
     TIA
 ---
+code: |
+  multi_user = True
+---
 sections:
   - intro: Introduction
   - one: Section 1
