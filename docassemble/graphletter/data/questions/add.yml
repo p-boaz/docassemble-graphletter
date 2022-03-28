@@ -4,57 +4,25 @@ include:
 ---
 metadata:
   title: |
-    Record a Data Processing Activity
+    test
   tags:
   require login: True
----
-id: patch pre-1.4.8 bug
-mandatory: True
-code: |
-  if task_not_yet_performed('erase_none'):
-    if defined('data_types') and None in data_types:
-      del data_types[None]
-    mark_task_as_performed('erase_none')
 ---
 objects:
   - respondents: DADict.using(gathered=True)
   - users: GLPeopleList.using(there_are_any=True)
   - other_parties: GLPeopleList.using(there_are_any=True)
   - userdata: DAStore.using(encrypted=False)
+  - product: Person
+  - data_types[i].details[j].dpia_factors: DADict
 ---
 code: |
   preferences = userdata.get("prefs") or DAObject('preferences')  
----
-comment: |
-  Section labels for child interviews that have follow-up
-  questions
-variable name: sub_documents
-data: !!omap
-  - describe_transfer:
-      section_link: review_checklist
-      section_label: Transfer details
-      name: Transfer details
-      count: 2
-  - determine_pre_DPIA: 
-      section_link: review_checklist
-      section_label: Complete pre-DPIA assessment
-      name: Complete pre-DPIA assessment
-      count: 2
----
-sections:
-  - review_datacats: List data categories
-  - document_choice: Data transfer details
-  - provide_details: Answer questions
-  - preview_and_sign: Preview and sign
-  - results: Results
-auto open: False  
 ---
 modules:
   - .load_data
   - .progressivedisclosure
   - docassemble.ALToolbox.misc
-  - .countries
-  - .products
 ---
 features:
   css: docassemble.ALToolbox:collapse_template.css
@@ -62,7 +30,6 @@ features:
 mandatory: True
 id: interview order
 code: |
-  nav.hide()
   intro
   users[0].name.first
   if user_logged_in():
@@ -71,12 +38,15 @@ code: |
     user = respondents[user_info().email]
   else:
     must_be_logged_in_page
-  nav.set_section('review_data')
   preferences.jurisdiction
   if not userdata.defined("prefs"):
     userdata.set("prefs", preferences)
   session_tags().add(biz_function)
-  product
+  screen_is_using_processor 
+  if screen_is_using_processor:
+    product.name.text
+  else:
+    define('product.name.text', 'Internal Process')
   data_types.gather()
   if data_types.count_datacats() > 0:
     # This is a bit of a workaround
@@ -86,57 +56,17 @@ code: |
     review_datacats
   else:
     warn_add_datacats
-  nav.set_section('document_choice')
-  screen_data_is_transferred
-  nav.set_section('provide_details')  
-  if not screen_data_is_transferred:
-    update_sections_with_selected_documents
-    nav.set_section(sub_documents['determine_pre_DPIA'].get('section_link'))
-    DPIA_splash_screen
-    data_types[funnel].details[datacat].dpia_factors
-  else:
-    explain_documents
-    update_sections_with_selected_documents  
-  if screen_data_is_transferred and document_choice['describe_transfer']:
-    nav.set_section(sub_documents['describe_transfer'].get('section_link'))
-    transfer_details.importing_country
-  nav.set_section('results')
-  results
----
-depends on:
-  - screen_data_is_transferred
-  - document_choice
-code: |
-  new_sections = []
+  screen_data_is_transferred 
   if screen_data_is_transferred:
-    for document in sub_documents:
-      if document in document_choice.true_values():
-        new_sections.append({
-          sub_documents[document].get('section_link'):  sub_documents[document].get('section_label')
-        })
-  else:
-    new_sections.append({sub_documents['determine_pre_DPIA'].get('section_link'): sub_documents['determine_pre_DPIA'].get('section_label')})
-  old_nav = nav.get_sections()
-  
-  position = 3 # Current, hardcoded position in the list
-  position_label = 'Answer questions'
-  for index, item in enumerate(old_nav):
-    if next(iter(item)) == 'provide_details':
-      position = index
-      position_label = next(iter(item.values()))
-  old_nav[position] = {position_label: new_sections}
-
-  nav.set_sections(old_nav)
-
-  update_sections_with_selected_documents = True
+    transfer_details.importing_country
+  results
 ---
 features:
   javascript:
-    - back_button.js
-  #navigation: horizontal    
+    - back_button.js 
   small screen navigation: dropdown
   progress bar: False
-  hide navbar: False
+  hide navbar: True
   css: progressivedisclosure.css
   question back button: True
   question help button: True
@@ -154,7 +84,7 @@ code: |
     data_types[i].details[datacat].data_subjects
   data_types[i].complete = True
 ---
-code: |  
+code: |
   data_types[i].details[j].data_subjects
   data_types[i].details[j].complete = True
 ---
@@ -205,7 +135,7 @@ code: |
 id: intro
 question: |
   Hi, ${ user_info().first_name }
-subquestion: |  
+subquestion: |
   #### Here's how this works
   
   You answer what you know. We do the rest. 
@@ -227,27 +157,10 @@ subquestion: |
 continue button field: intro
 continue button label: Get started
 ---  
-id: product
-question: |
-  Add a product you use at work
-subquestion: |  
-  This processing acvitity is for 
-  % for tag in session_tags():
-  
-  * ${ tag }
-  % endfor
-fields:
-  - Product: product
-    datatype: object
-    input type: combobox
-    choices: products 
----
 id: tags
-question: Select a Business Function for this processing activity
-subquestion: |
-  
+question: Describe your processing activity
 fields: 
-  - no label: biz_function
+  - What is the business function?: biz_function
     input type: radio
     choices: 
       - Sales
@@ -261,6 +174,12 @@ fields:
     show if:
       variable: biz_function
       is: "Other"
+  - Are you using a third-party product for this processing activity? e.g. Salesforce, Google BigQuery, etc.: screen_is_using_processor
+    datatype: yesnoradio
+  - Add product here: product.name.text
+    show if:
+      variable: screen_is_using_processor
+      is: True
 ---
 id: funnel chooser
 question: |
@@ -306,42 +225,6 @@ data:
   - Tracking: Tracking Data
     image: binoculars
 ---
-if: |
-  i == 'Special'
-undefine:
-  - data_types[i].df  
-  - data_types[i].complete
-id: Entries
-question: |
-  Special Categories
-subquestion: |
-  There are certain types of data that the General Data Protection Regulation (GDPR) considers to be sensitive personal data and therefore classifies them under the [special category] of personal data. 
-  
-  If you do not see your processing activity listed below, try a different category.
-fields:
-  - no label: data_types[i].entries
-    datatype: checkboxes
-    required: False
-    code: |
-      datacats_with_help(dataloader, "Yes", search_column="Special")
-    default:
-      code: |
-        data_types[i].entries.true_values() if defined('data_types[i].entries') else []
-help: 
-  label: |
-    GDPR Reference
-  content: |
-    The activities listed above are cited in the following sections of the
-    [GDPR](https://gdpr.eu/what-is-gdpr/):
-        
-    Activity | GDPR
-    ---------|-----------------
-    % for row in dataloader.get_rows(allowed_types=["Yes"], filter_column="Special").iterrows():
-    ${ row[1]['Interview description'] } | ${ row[1]['GDPR Citation'] }
-    % endfor
----
-if:
-  i != 'Special'
 undefine:
   - data_types[i].df
   - data_types[i].complete  
@@ -391,7 +274,7 @@ continue button field: review_datacats
 id: review datacats
 question: |
   Here is what you've added so far
-subquestion: |  
+subquestion: |
   ${ review_datacats_template }
 ---
 template: review_datacats_template
@@ -433,59 +316,11 @@ subquestion: |
   ${ data_types.add_action() }
   % endif
 ---
-objects:
-  - transfer_details: DAList.using(there_are_any=True, complete_attribute='complete')
----
-id: triage
-question: |
-  Deciding on your next steps
-subquestion: |
-  % for category in data_types:
-  #### [${ category.title() if not category is None else 'None' }](${ url_action('data_types["' + str(category) + '"].entries') })
-  % endfor
-fields:
-  - Is this data transferred to another country?: screen_data_is_transferred
-    datatype: yesnoradio
-  - note: |
-      Great! You won't need to complete a Transfer Impact Assessment. 
-    show if:
-      variable: screen_data_is_transferred
-      is: False
-  - note: |
-      **What would you like to do?**    
-      Remember, you can come back and fill this out later.
-    show if: screen_data_is_transferred
-  - no label: document_choice
-    required: False
-    datatype: checkboxes
-    js show if: |
-      val("screen_data_is_transferred")
-    choices:
-      - Add details about the data transfer: describe_transfer
-      - Complete pre-DPIA assessment: determine_pre_DPIA
-    none of the above: False
-    default:
-      - describe_transfer
-  - no label: document_choice
-    required: False
-    datatype: checkboxes
-    js show if: |
-      !val("screen_data_is_transferred")
-    choices:
-      - Complete pre-DPIA assessment: determine_pre_DPIA
-    none of the above: False
-    default:
-      - determine_pre_DPIA
-
-validation code: |
-  if screen_data_is_transferred and len(document_choice.true_values()) < 1:
-    validation_error("Select at least one.", field="document_choice")
----
 id: details for this entry
 question: |
   More information about the `${ data_types[i].df.loc[j]['Interview description'].lstrip() } data` you process
 fields:
-#Next three questions are temp fix
+#Next question is a temp fix
   - Name: data_types[i].details[j].name
     default: |
       ${ data_types[i].df.loc[j]['Interview description'].lstrip() }
@@ -495,9 +330,10 @@ fields:
   - note: |
       ${ collapse_template(cont_or_proc) } 
   - Whose data do you process?: data_types[i].details[j].data_subjects
+    input type: radio
     choices:
       - Employees
-      - Emergency contacts
+      - Emergency Contacts
       - Successful Candidates
       - Unsuccessful Candidates
       - Suppliers 
@@ -509,6 +345,7 @@ fields:
     js show if: |
       val("data_types[i].details[j].data_subjects") == "Other"
   - What is the purpose of processing?: data_types[i].details[j].purpose
+    input type: radio
     choices:
       - Payroll
       - Personnel File
@@ -520,16 +357,23 @@ fields:
   - Please Specify: data_types[i].details[j].purpose
     js show if: |
       val("data_types[i].details[j].purpose") == "Other"  
-  - What format is the data stored in?: data_types[i].details[j].format
-    input type: radio
-    choices:
-      - Digital
-      - Hardcopy
-      - Other
-  - Please Specify: data_types[i].details[j].format
-    js show if: |
-      val("data_types[i].details[j].format") == "Other"
+  - This activity will...: data_types[i].details[j].dpia_factors
+    datatype: checkboxes
+    code: |
+      [
+        {'new_tech': 'Involve a new technology/system',
+         'help': 'Innovative technology that involves new developments in technological knowledge in the world at large, rather than technology that is new to you. Using such technology can involve novel forms of data collection and use, possibly with a high risk to individuals’ rights and freedoms. The personal and social consequences of deploying a new technology may be unknown.'},
+        {'old_system': 'Use an old system for new processing purposes'},
+        {'vuln_groups': 'Collect data related to vulnerable groups'},
+        {'monitoring': 'Involve monitoring data subjects', 
+        'help': 'Occurs according to a system; Is pre-arranged, organised or methodical; Takes place as part of a general plan for data collection; or Is carried out as part of a strategy.'},
+        {'profiling': 'Involve profiling the personal data processed'},
+        {'auto_decisions': 'Involve automated decision-making'},
+        {'aggregation': 'Involve the aggregation of data'},
+        {'large_scale': 'Process data on a large scale'}
+      ]
   - Who receives the data?: data_types[i].details[j].recipients
+    input type: radio
     choices:
       - Internal department that processes the concerned data
       - Processor
@@ -540,7 +384,7 @@ fields:
   - Please Specify: data_types[i].details[j].recipients
     js show if: |
       val("data_types[i].details[j].recipients") == "Other"
-  - Do you have a Data Processing Agreement with this processor?:               data_types[i].details[j].recipient_has_DPA
+  - Do you have a Data Processing Agreement with this processor?: data_types[i].details[j].recipient_has_DPA
     datatype: yesnoradio
     js show if: |
       val("data_types[i].details[j].recipients") == "Processor"
@@ -568,6 +412,25 @@ fields:
   - Any additional notes you want to add: data_types[i].details[j].description
     datatype: area
     required: False
+---
+objects:
+  - transfer_details: DAList.using(there_are_any=True, complete_attribute='complete')
+---
+id: triage
+question: |
+  Does this processing activity involve an international data transfer?
+subquestion: |
+  % for category in data_types:
+  #### [${ category.title() if not category is None else 'None' }](${ url_action('data_types["' + str(category) + '"].entries') })
+  % endfor
+fields:
+  - no label: screen_data_is_transferred
+    datatype: yesnoradio
+  - note: |
+      Great! You won't need to complete a Transfer Impact Assessment. 
+    show if:
+      variable: screen_data_is_transferred
+      is: False
 ---
 id: basic data transfer details
 question: |
@@ -623,14 +486,6 @@ fields:
       - instant messenger
       - third party software
       - third party communication
----
-include: 
-  - lia.yml
----
-event: query_results
-code: |
-  data = dict(users=users[0].name.first, cool=product.name, idk=review_datacats_template)
-  json_response(data)
 ---
 sets: final_page
 id: results
@@ -841,47 +696,10 @@ subquestion: |
   Answer the following screening questions to determine your need for a DPIA. 
 field: DPIA_splash_screen
 ---
-objects: 
-  - data_types[i].details[j].dpia_factors: DADict
----
-question: |
-  Select all that apply to processing `${ data_types[i].df.loc[j]['Interview description'].lstrip() }` data
-fields:
-  - "This activity will...": data_types[i].details[j].dpia_factors
-    datatype: checkboxes
-    code: |
-      [
-        {'new_tech': 'Involve a new technology/system',
-         'help': 'Innovative technology that involves new developments in technological knowledge in the world at large, rather than technology that is new to you. Using such technology can involve novel forms of data collection and use, possibly with a high risk to individuals’ rights and freedoms. The personal and social consequences of deploying a new technology may be unknown.'},
-        {'old_system': 'Use an old system for new processing purposes',
-        },
-        {'vuln_groups': 'Collect data related to vulnerable groups'},
-        {'location_data': 'Collect location data'},
-        {'monitoring': 'Involve monitoring data subjects', 
-        'help': 'Occurs according to a system; Is pre-arranged, organised or methodical; Takes place as part of a general plan for data collection; or Is carried out as part of a strategy.'},
-        {'profiling': 'Involve profiling the personal data processed'},
-        {'auto_decisions': 'Involve automated decision-making'},
-        {'aggregation': 'Involve the aggregation of data'},
-        {'large_scale': 'Process data on a large scale'}
-      ]
-  - Will you collect any of the following data? : data_types[i].details[j].data_collected
-    datatype: checkboxes
-    choices:
-      - Name: 'name'
-      - Address: 'address'
-      - Email: 'email'
-      - Telephone number: 'telephone number'
-      - Date of birth or age: 'date of birth or age'
-      - Gender: 'gender'
-      - Nationality: 'nationality'
----
-code: |
-  screen_data_is_transferred and document_choice['describe_transfer']
----
 terms:
   special category: |
     This includes data that can be used to infer something about an individual, either on its own, or in combination with other data.
   invisible processing: |
     * Controller processes personal data that it has not obtained directly from the data subject; and
     * Controller asserts that giving notice to data subjects would prove impossible or involve disproportionate effort. 
-    * A DPIA is required where this processing is combined with any of the criteria from the European guidelines.   
+    * A DPIA is required where this processing is combined with any of the criteria from the European guidelines.  

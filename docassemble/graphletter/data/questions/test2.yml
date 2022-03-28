@@ -1,39 +1,705 @@
 ---
-question: |
-  Introduction to Markdown
-subquestion: |
-  Markdown allows you to express
-  formatting in plain text.
-  
-  # I am a heading
-
-  Write in *italic text* or even
-  **bold text**.
-
-  ## I am a subheading
-
-  ### I am a smaller subheading
-
-  To block quote,
-
-  > you can do this.
-
-  Insert an image:
-
-  ![Markdown logo](https://upload.wikimedia.org/wikipedia/commons/thumb/4/48/Markdown-mark.svg/208px-Markdown-mark.svg.png)
-
-  Here is a bullet list:
-
-  * Larry;
-  * Curly; and
-  * Moe
-
-  Here is a numbered list:
-
-  1. Buy groceries.
-  2. Get the car inspected.
-  3. Take over the world!
-  
-  You can [Google](http://google.com)
-  "markdown" to learn more.
+include:
+  - gl_package.yml
+---
+metadata:
+  title: |
+    test
+  tags:
+  require login: True
+---
+objects:
+  - respondents: DADict.using(gathered=True)
+  - users: GLPeopleList.using(there_are_any=True)
+  - other_parties: GLPeopleList.using(there_are_any=True)
+  - userdata: DAStore.using(encrypted=False)
+  - product: Person
+  - data_types[i].details[j].dpia_factors: DADict
+---
+code: |
+  preferences = userdata.get("prefs") or DAObject('preferences')  
+---
+modules:
+  - .load_data
+  - .progressivedisclosure
+  - docassemble.ALToolbox.misc
+---
+features:
+  css: docassemble.ALToolbox:collapse_template.css
+---
 mandatory: True
+id: interview order
+code: |
+  intro
+  users[0].name.first
+  if user_logged_in():
+    if user_info().email not in respondents:
+      respondents.initializeObject(user_info().email)
+    user = respondents[user_info().email]
+  else:
+    must_be_logged_in_page
+  preferences.jurisdiction
+  if not userdata.defined("prefs"):
+    userdata.set("prefs", preferences)
+  session_tags().add(biz_function)
+  screen_is_using_processor 
+  if screen_is_using_processor:
+    product.name.text
+  else:
+    define('product.name.text', 'Internal Process')
+  data_types.gather()
+  if data_types.count_datacats() > 0:
+    # This is a bit of a workaround
+    for funnel in data_types:
+      for datacat in data_types[funnel].entries.true_values():
+        data_types[funnel].details[datacat].data_subjects
+    review_datacats
+  else:
+    warn_add_datacats
+  screen_data_is_transferred 
+  if screen_data_is_transferred:
+    transfer_details.importing_country
+  results
+---
+features:
+  javascript:
+    - back_button.js 
+  small screen navigation: dropdown
+  progress bar: False
+  hide navbar: True
+  css: progressivedisclosure.css
+  question back button: True
+  question help button: True
+---
+objects:
+  - dataloader: DataLoader.using(filename="data_category_list.xlsx")
+  - data_types: DataCatDict.using(there_are_any=True)
+---
+depends on:
+  - data_types[i].entries
+code: |
+  data_types[i].entries
+  data_types[i].df
+  for datacat in data_types[i].entries.true_values():
+    data_types[i].details[datacat].data_subjects
+  data_types[i].complete = True
+---
+code: |
+  data_types[i].details[j].data_subjects
+  data_types[i].details[j].complete = True
+---
+sets: must_be_logged_in_page
+question: Please log in
+subquestion: |
+  Please click "Sign in" to continue.  If you do not have
+  an account, you can register for one.
+buttons:
+  - Sign in: signin
+---
+template: what_is_a_RoPA
+subject: |
+  What is a Record of Processing Activities (RoPA)?
+content: |
+  A completed ROPA lists each processing activity involving personal data and provides detailed information about each of the items listed above. While this may sound like a simple task, even building a complete list of processing activities is often a complex and time-consuming endeavor, involving detailed documentation reviews and multiple rounds of interviews with business users and IT. Larger organizations may want to create individual ROPAs for each department or line of business, and then roll up into a master enterprise-level record.
+
+  Due to the high volume of their processing activities involving personal data, midsize-to-large companies will likely need a data discovery tool to begin pulling together and organizing the various elements of the ROPA. Smaller organizations may want to start with a spreadsheet containing one row per processing activity (e.g. “Candidate offer of employment”) and one column for each of the fields listed above.
+---
+code: |
+  countries = objects_from_file("countries_list.yml")
+---
+code: |
+  products = objects_from_file("products_list.yml")
+---
+question: |
+  Your info
+subquestion: |
+
+fields:
+  - First: users[0].name.first
+    default: |
+      ${ user_info().first_name }
+  - Last: users[0].name.last
+    default: |
+      ${ user_info().last_name }
+  - Email: users[0].email
+    default: |
+      ${ user_info().email }
+  - Location: preferences.jurisdiction
+    datatype: object
+    input type: combobox
+    choices: countries 
+---
+code: |
+  user_jx = preferences.jurisdiction.copy_deep('user_jx')
+---
+id: intro
+question: |
+  Hi, ${ user_info().first_name }
+subquestion: |
+  #### Here's how this works
+  
+  You answer what you know. We do the rest. 
+  
+  A Record of Processing Activities (RoPA) is a record of an organization’s processing activities involving personal data. Some businesses may think of “processing” as being limited to active events, but a RoPA must also cover data that sits on a server or a shelf.
+
+  A RoPA includes the following information for each processing activity:
+
+  - Names and contact details of the data controller, data processor, data controller's representative, joint controller, and data protection officer (DPO), if applicable
+  - Purpose (i.e., lawful basis) of processing personal data
+  - Categories of data subjects and categories of personal data being processed
+  - Categories of recipients to whom the personal data has been or will be disclosed
+  - Third parties in other countries or international organizations who receive the personal data
+  - Retention schedule for each category of personal data
+  - General description of technical and organizational security measures related to each processing activity
+  
+  ${ prog_disclose(what_is_a_RoPA) }
+  
+continue button field: intro
+continue button label: Get started
+---  
+id: tags
+question: Describe your processing activity
+fields: 
+  - What is the business function?: biz_function
+    input type: radio
+    choices: 
+      - Sales
+      - Human Resources
+      - Security
+      - Marketing
+      - Procurement and Supply Chain
+      - Customer Service
+      - Other
+  - Add here: biz_function 
+    show if:
+      variable: biz_function
+      is: "Other"
+  - Are you using a third-party product for this processing activity? e.g. Salesforce, Google BigQuery, etc.: screen_is_using_processor
+    datatype: yesnoradio
+  - Add product here: product.name.text
+    show if:
+      variable: screen_is_using_processor
+      is: True
+---
+id: funnel chooser
+question: |
+  Select what kinds of data you process
+subquestion: |
+  % if len(data_types):
+  You have already listed data types within these classes:
+  
+  % for button in data_types:
+  * [${ str(button).capitalize() }](${ url_action('data_types["' + button + '"].entries') } )
+  % endfor
+  % else:
+  Data processing in the EU is governed by the [General Data Privacy Regulation](https://gdpr.eu/what-is-gdpr/), and many laws around the world have similar rules.
+  Click the buttons below to learn what compliance means in different categories.
+  % endif
+field: data_types.new_item_name
+buttons:
+  code: |
+    [button for button in available_buttons if next(iter(button)) not in data_types ]
+back button label: |
+  Back
+post: |
+  % if len(data_types.elements):
+  ${ action_button_html(url_ask('set_gathered'), label="Skip and continue", color="primary", size="md") }
+  % endif
+---
+code: |
+  data_types.gathered = True
+  set_gathered = True
+---
+variable name: available_buttons
+data:
+  - Internal: Internal Data
+    image: user-tag
+  - External: External Data
+    image: user-plus
+  - Financial: Financial Data
+    image: money-bill-wave
+  - Historical: Historical Data
+    image: history
+  - Social: Social Data
+    image: user-friends
+  - Tracking: Tracking Data
+    image: binoculars
+---
+undefine:
+  - data_types[i].df
+  - data_types[i].complete  
+id: Non-special entries
+question: |
+  Categories of ${ i } data
+fields:
+  - no label: data_types[i].entries
+    datatype: checkboxes
+    required: False
+    code: |
+      datacats_with_help(dataloader, i)
+    default:
+      code: |
+        data_types[i].entries.true_values() if defined('data_types[i].entries') else []
+help: 
+  label: |
+    GDPR Reference
+  content: |
+    The processing activities listed above are cited in the following sections of the [GDPR](https://gdpr.eu/what-is-gdpr/):
+        
+    Activity | GDPR
+    ---------|-----------------
+    % for row in dataloader.get_rows(allowed_types=[i], filter_column="Category").iterrows():
+    ${ row[1]['Interview description'] } | ${ row[1]['GDPR Citation'] }
+    % endfor        
+---
+id: there is another datacat
+question: |
+  Do you want to record another category?
+subquestion: |
+  So far you have reviewed `${ comma_and_list([f'"{str(key).capitalize()}"' for key in data_types.keys()]) }` data.
+  
+  Tap "yes" if you want to look at processing activities in another category.
+yesno: data_types.there_is_another
+---
+code: |
+  if len(data_types.complete_elements()) >= len(available_buttons): 
+    data_types.there_is_another = False
+---
+depends on:
+  - data_types[i].entries
+code: |
+  data_types[i].df = dataloader.load_rows(data_types[i].entries.true_values())
+---
+continue button field: review_datacats
+id: review datacats
+question: |
+  Here is what you've added so far
+subquestion: |
+  ${ review_datacats_template }
+---
+template: review_datacats_template
+content: |
+  % if len(data_types.elements): 
+  Click a category below to revisit your answers.
+  
+  % for category in data_types.elements:
+  #### [${ category.title() if not category is None else 'None' }](${ url_action('data_types["' + str(category) + '"].entries') })
+  
+  % for index, row in data_types[category].df.iterrows():
+  * [${ row['Interview description'] }](${ url_action(f'data_types["{str(category)}"].details["{str(index)}"].data_subjects')})
+  % endfor
+  % endfor
+  % endif
+  
+  % if len(data_types) < len(available_buttons):
+  ${ data_types.add_action() }
+  % endif
+---
+event: warn_add_datacats
+question: |
+  You haven't added any data categories yet
+subquestion: |
+  You should add at least one category to continue.
+  % if len(data_types): 
+  
+  Click a category below to revisit your selections.  
+  % endif  
+  % for category in data_types:
+  #### [${ category.title() if not category is None else 'None' }](${ url_action('data_types["' + str(category) + '"].entries') })
+  
+  % for index, row in data_types[category].df.iterrows():
+  * ${ row['Interview description'] }
+  % endfor
+  % endfor  
+  
+  % if len(data_types) < len(available_buttons):
+  ${ data_types.add_action() }
+  % endif
+---
+id: details for this entry
+question: |
+  More information about the `${ data_types[i].df.loc[j]['Interview description'].lstrip() } data` you process
+fields:
+#Next question is a temp fix
+  - Name: data_types[i].details[j].name
+    default: |
+      ${ data_types[i].df.loc[j]['Interview description'].lstrip() }
+    hide if: intro
+  - Are you the controller?: data_types[i].details[j].is_controller
+    datatype: yesnomaybe
+  - note: |
+      ${ collapse_template(cont_or_proc) } 
+  - Whose data do you process?: data_types[i].details[j].data_subjects
+    input type: radio
+    choices:
+      - Employees
+      - Emergency Contacts
+      - Successful Candidates
+      - Unsuccessful Candidates
+      - Suppliers 
+      - Clients
+      - Existing Customers
+      - Potential Customers
+      - Other
+  - Please Specify: data_types[i].details[j].data_subjects
+    js show if: |
+      val("data_types[i].details[j].data_subjects") == "Other"
+  - What is the purpose of processing?: data_types[i].details[j].purpose
+    input type: radio
+    choices:
+      - Payroll
+      - Personnel File
+      - Recruitment
+      - Direct Marketing
+      - Staff Administration
+      - Customer Orders
+      - Other
+  - Please Specify: data_types[i].details[j].purpose
+    js show if: |
+      val("data_types[i].details[j].purpose") == "Other"  
+  - This activity will...: data_types[i].details[j].dpia_factors
+    datatype: checkboxes
+    code: |
+      [
+        {'new_tech': 'Involve a new technology/system',
+         'help': 'Innovative technology that involves new developments in technological knowledge in the world at large, rather than technology that is new to you. Using such technology can involve novel forms of data collection and use, possibly with a high risk to individuals’ rights and freedoms. The personal and social consequences of deploying a new technology may be unknown.'},
+        {'old_system': 'Use an old system for new processing purposes'},
+        {'vuln_groups': 'Collect data related to vulnerable groups'},
+        {'monitoring': 'Involve monitoring data subjects', 
+        'help': 'Occurs according to a system; Is pre-arranged, organised or methodical; Takes place as part of a general plan for data collection; or Is carried out as part of a strategy.'},
+        {'profiling': 'Involve profiling the personal data processed'},
+        {'auto_decisions': 'Involve automated decision-making'},
+        {'aggregation': 'Involve the aggregation of data'},
+        {'large_scale': 'Process data on a large scale'}
+      ]
+  - Who receives the data?: data_types[i].details[j].recipients
+    input type: radio
+    choices:
+      - Internal department that processes the concerned data
+      - Processor
+      - Recipients in third countries or international organisations
+      - Institutional or commercial partners
+      - Other
+      - I am not sure
+  - Please Specify: data_types[i].details[j].recipients
+    js show if: |
+      val("data_types[i].details[j].recipients") == "Other"
+  - Do you have a Data Processing Agreement with this processor?: data_types[i].details[j].recipient_has_DPA
+    datatype: yesnoradio
+    js show if: |
+      val("data_types[i].details[j].recipients") == "Processor"
+  - You can upload it here if you have it handy: data_types[i].details[j].files
+    datatype: files
+    required: False
+    show if: data_types[i].details[j].recipient_has_DPA
+    image upload type: jpeg        
+    accept: |
+      "image/*,image/png,image/jpeg,.doc,.docx,application/msword,application/vnd.openxmlformats-officedocument.wordprocessingml.document,application/pdf,.pdf"   
+  - Legal Basis: data_types[i].details[j].legal_basis
+    input type: radio
+    choices:
+      - Consent: 'consent'
+      - Contract: 'contract'
+      - Legal obligation: 'legal obligation'
+      - Vital interests: 'vital interests'
+      - Public task: 'public task'
+      - Legitimate interests: 'legitimate interests'
+    note: |
+      ###What is lawfulness?
+      For processing of personal data to be lawful, you need to identify specific grounds for the processing. 
+      This is called a **‘lawful basis’** for processing, and there are six options which depend on your purpose and your relationship with the individual.
+      There are also specific additional conditions for processing some especially sensitive types of data.
+  - Any additional notes you want to add: data_types[i].details[j].description
+    datatype: area
+    required: False
+---
+objects:
+  - transfer_details: DAList.using(there_are_any=True, complete_attribute='complete')
+---
+id: triage
+question: |
+  Does this processing activity involve an international data transfer?
+subquestion: |
+  % for category in data_types:
+  #### [${ category.title() if not category is None else 'None' }](${ url_action('data_types["' + str(category) + '"].entries') })
+  % endfor
+fields:
+  - no label: screen_data_is_transferred
+    datatype: yesnoradio
+  - note: |
+      Great! You won't need to complete a Transfer Impact Assessment. 
+    show if:
+      variable: screen_data_is_transferred
+      is: False
+---
+id: basic data transfer details
+question: |
+  Data transfer details
+fields:
+  - Exporting Country : transfer_details.exporting_country
+    datatype: object
+    input type: combobox
+    default: preferences.jurisdiction
+    choices: countries
+    required: False
+
+  - Importing Country : transfer_details.importing_country
+    datatype: object
+    input type: combobox
+    choices: countries
+    required: False
+    
+  - What is the proposed legal basis for transferring the data?: transfer_details.transfer_mech
+    required: False
+    choices:
+      - standard contracts (SCCs) 
+      - ad hoc contractual clauses
+      - codes of conduct
+      - binding corporate rules (BCRs)
+      - certification mechanisms
+      - another GDPR Article 49 derogation
+      - I am not sure
+  - Art. 49 Derogation: transfer_details.derogation      
+    required: false
+    js show if: |
+      val("transfer_details.transfer_mech") == "another GDPR Article 49 derogation"
+    choices:
+      - the data subject has explicitly consented to the proposed transfer, after having been informed of the possible risks of such transfers for the data subject due to the absence of an adequacy decision and appropriate safeguards;
+      - the transfer is necessary for the performance of a contract between the data subject and the controller or the implementation of pre-contractual measures taken at the data subject request;
+      - the transfer is necessary for the conclusion or performance of a contract concluded in the interest of the data subject between the controller and another natural or legal person;
+      - the transfer is necessary for important reasons of public interest;
+      - the transfer is necessary for the establishment, exercise or defence of legal claims;
+      - the transfer is necessary in order to protect the vital interests of the data subject or of other persons, where the data subject is physically or legally incapable of giving consent;
+      - the transfer is made from a register which according to Union or Member State law is intended to provide information to the public and which is open to consultation either by the public in general or by any person who can demonstrate a legitimate interest, but only to the extent that the conditions laid down in Union or Member State law for consultation are fulfilled inthe particular case.
+    note: |
+      In the absence of an adequacy decision pursuant to Article 45(3), or of appropriate safeguards pursuant to Article 46, including binding corporate rules, a transfer or a set of transfers of personal data to a third country or an international organisation shall take place only on one of the following conditions  
+  
+  - Method of Transfer: transfer_details.method
+    required: False
+    input type: combobox
+    choices:
+      - physical records in-store
+      - physical records in the office
+      - email
+      - internal documentation
+      - internal software
+      - instant messenger
+      - third party software
+      - third party communication
+---
+sets: final_page
+id: results
+event: results
+question: |
+  Done! Here are your recommendations
+subquestion: |
+  
+  % if len(data_types.elements): 
+  
+  % for category in data_types.elements:
+  ## **Results for ${ category } data**
+  
+  #### Special category data
+
+  % if category == 'Special':
+    Since you are processing special category data, you need to identify both a lawful basis for processing and a special category condition for processing in compliance with Article 9 of the GDPR. You should document both your lawful basis for processing and your special category condition so that you can demonstrate compliance and accountability.
+    
+    * [Go here] to determine the exemption that applies to your processing activity. 
+
+  [Go here]: ${ interview_url(i='docassemble.testServer:data/questions/a_sensitive_data_exemptions.yml') }
+  
+  % else:  
+    Great, you indicated you're not processing sensitive data. If you are processing special category data, you need to identify both a lawful basis for processing and a special category condition for processing in compliance with Article 9 of the GDPR. You should document both your lawful basis for processing and your special category condition so that you can demonstrate compliance and accountability.
+  % endif
+  
+  % for index, row in data_types[category].df.iterrows():
+  
+    % if data_types[category].details[index].legal_basis == 'legitimate interests':
+  #### Legal Basis: `Legitimate Interests`
+    
+    The latest indications from data protection authorities suggest that they will start scrutinising the Legitimate Interests basis more. We suggest utilising a three-part test to ensure you are confident in claiming this legal basis. 
+    
+    * Take the test [here]
+    [here]: ${ interview_url(i='docassemble.testServer:data/questions/legitimate_interests.yml') }
+    
+    % elif data_types[category].details[index].legal_basis == 'public task':
+  #### Legal Basis: `Public Task`
+    
+      Public task refers to the need to collect data in the public interest, such as during a task by a public authority.
+      
+      It usually doesn't apply to private companies, but it also doesn't require statutory power to process the data.
+      
+      Like other lawful bases, the processing must be necessary. You can't claim this basis if you can get away without processing the data.
+
+    % elif data_types[category].details[index].legal_basis == 'consent':
+  #### Legal Basis: `Consent`
+    
+    Consent is perhaps the strongest of the lawful bases because it speaks to the mission of the GDPR: to put the data subject back in control of their own data.
+
+    In essence, it requires you to ask the data subject for permission to process their data before you collect it. Consent can't be implied. You can't assume that they agree to your data processing just because they use your site.
+
+    % elif data_types[category].details[index].legal_basis == 'contract':
+  #### Legal Basis: `Contract`
+    
+    The contractual basis exists to protect processors who require data to fulfill a contract.
+    
+    In most cases, the data you need to fulfill a contract comes from the basis of your legitimate interests. However, for data that doesn't apply to every customer or when you need to meet a contract that differs from the norm, you can add the contractual basis.
+
+    % elif data_types[category].details[index].legal_basis == 'legal obligation':
+  #### Legal Basis: `Legal Obligation`
+    
+    The legal obligation basis states that you need to process personal data to comply with the law. For example, a bank may need to process passport numbers or Social Security numbers to meet federal standards for proof of identification as well as anti-money laundering statutes.
+    
+    However, if you run a social media platform, you don't require these sensitive pieces of data because there's no law saying so. As a result, you'd need to rely on a different basis.
+
+     When you quote your legal obligation, it's a good idea to also state what statutes or agencies you report to.
+
+    % elif data_types[category].details[index].legal_basis == 'vital interests':
+  #### Legal Basis: `Vital Interests`
+    
+    The vital interests basis refers to processing that is absolutely necessary but also a case where consent won't apply.
+    
+    The given interpretation of the basis says that you rely on it if you need it to protect someone's life but you can't otherwise get consent for the processing (either they can't or won't provide it).
+    
+    Most businesses won't rely on vital interest at all. Healthcare organizations (namely emergency medical care providers) and public bodies may be the only ones who use this basis.
+
+    % endif
+
+  #### Controller/Processor obligations
+
+    % if data_types[category].details[index].is_controller:
+  As the controller of **${ data_types[category].details[index].name }** data you have additional obligations. 
+  
+    % elif data_types[category].details[index].is_controller is None:
+  Find out how determine whether you're a controller or processor of **${ data_types[category].details[index].name }** data.
+  
+    % else:
+    As the processor of **${ data_types[category].details[index].name }** data, you have fewer requirements. 
+    % endif
+  
+  % endfor
+  
+  % endfor
+  
+  % endif
+
+  #### Cross-border data transfers 
+
+  % if screen_data_is_transferred:
+  
+  % for category in data_types:
+  Sending `${ category.title()} data` to `${ transfer_details.importing_country }`
+  
+   % if transfer_details.importing_country.level_of_protection == 'Member country of the EU or the EEA':
+  ${ transfer_details.importing_country } belongs to the European Economic Area.
+  
+  % elif transfer_details.importing_country.level_of_protection == 'Adequate country':
+  ${ transfer_details.importing_country } ensures an adequate level of data protection recognized by EU. Data transfers to **${ transfer_details.importing_country }** do not require the use of transfer tools.
+
+  % elif transfer_details.importing_country.level_of_protection == 'Country partially adequate':
+  **${ transfer_details.importing_country }** is partially recognized as ensuring an adequate level of data protection by EU for certain specific processing. 
+
+  % elif transfer_details.importing_country.level_of_protection == 'Independent authority and law (s)':
+  **${ transfer_details.importing_country }** doesn't ensure an adequate level of data protection recognized by EU.
+  
+  * Data transfers to **${ transfer_details.importing_country }** require the use of transfer tools. 
+  * **${ transfer_details.importing_country }** has a data protection law and an independant data protection authority accredited at the international conference of data protection and privacy commissionners.
+
+  % elif transfer_details.importing_country.level_of_protection == 'With legislation':
+  **${ transfer_details.importing_country }** has general legislation on personal data protection or specific provisions, but it doesn't ensure an adequate level of data protection recognized by EU. Data transfers to **${ transfer_details.importing_country }** require the use of transfer tools.
+
+  % elif transfer_details.importing_country.level_of_protection == 'No law':
+  **${ transfer_details.importing_country }** doesn't have a data protection law. Therefore, it doesn't ensure an adequate level of data protection recognized by EU. Data transfers to **${ transfer_details.importing_country }** require the use of transfer tools.
+  
+  % endif
+  
+  % endfor
+  
+  % if transfer_details.importing_country.edpb_member == 'No':
+  ${ transfer_details.importing_country } is not a member of EDPB.
+  % else:
+  ${ transfer_details.importing_country } `is` a member of EDPB.
+  Find out about their data protection authority [here](${ transfer_details.importing_country.sa_website }).
+  
+  % endif
+
+  % else: 
+  According to your responses, this data is not transferred internationally. Good news for you - there's no need to complete a Transfer Impact Assessment. 
+  % endif
+buttons:
+  - Exit: leave
+---
+template: cont_or_proc
+subject: |
+  Answer these questions to determine if you are a controller or processor.
+content: |
+  You are a **controller** if your organisation decides...
+  
+  * to collect personal data in the first place
+  * the lawful basis for doing so
+  * what types of personal data to collect
+  * the purpose or purposes the data are to be used for
+  * which individuals to collect data about
+  * whether to disclose the data, and if so, to whom
+  * what to tell individuals about the processing
+  * how to respond to requests made in line with individuals’ rights
+      
+  You are a **processor** if your organisation decides...
+  
+  * what IT systems or other methods to use to collect personal data
+  * how to store the personal data;
+  * the details of the security measures to protect the personal data
+  * how it will transfer the personal data from one organisation to another
+  * how it will retrieve personal data about certain individuals
+  * how it will ensure it adheres to a retention schedule; and
+  * how it will delete or dispose of the data
+---
+id: explain_documents
+continue button field: explain_documents
+question: |
+  We may have a few more questions
+subquestion: |
+  On the next screens, we will ask whatever questions are needed to finish
+  your assessment. 
+---
+event: review_checklist
+question: |
+  Edit your answers
+review:
+  - Edit: users[0].name.first
+    button: |
+      Your name: ${ users[0] }
+  - Edit: review_datacats
+    button: |
+      ${ review_datacats_template }
+---
+id: pre_DPIA
+question: |
+  When do you need a DPIA?
+subquestion: |
+  A Data Protection Impact Assessment (DPIA) is a process to help you identify
+  and minimize the data protection risks of a project.
+  
+  You must do a DPIA for processing that is **likely to result in a high risk**
+  to individuals.
+  
+  To assess the level of risk, a DPIA must consider both the likelihood and the
+  severity of any impact on individuals. A DPIA does not have to eradicate the
+  risks altogether, but should help to minimise risks and assess whether or not
+  remaining risks are justified. DPIAs are a legal requirement for processing
+  that is likely to be high risk. But an effective DPIA can also bring broader
+  compliance, financial and reputational benefits, helping you demonstrate
+  accountability and building trust and engagement with individuals.
+  
+  As mentioned, a DPIA must be done before beginning any type of processing which is “likely to result in a high risk”. This means that although the actual level of risk has not been assessed, screening for factors that point to the potential for a widespread or serious impact on individuals must take place.
+  
+  Answer the following screening questions to determine your need for a DPIA. 
+field: DPIA_splash_screen
+---
+terms:
+  special category: |
+    This includes data that can be used to infer something about an individual, either on its own, or in combination with other data.
+  invisible processing: |
+    * Controller processes personal data that it has not obtained directly from the data subject; and
+    * Controller asserts that giving notice to data subjects would prove impossible or involve disproportionate effort. 
+    * A DPIA is required where this processing is combined with any of the criteria from the European guidelines.   
