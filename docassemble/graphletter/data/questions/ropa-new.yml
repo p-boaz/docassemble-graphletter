@@ -63,6 +63,7 @@ objects:
         complete_attribute='complete')
 ---
 code: |
+  multi_user = True
   activity.categories_of_data[i].name.text
   activity.categories_of_data[i].purpose
   activity.categories_of_data[i].indiv
