@@ -15,6 +15,7 @@ objects:
   - userdata: DAStore.using(encrypted=False)
   - product: Person
   - data_types[i].details[j].dpia_factors: DADict
+  - data_types[i].details[j].sub_types: DADict
 ---
 code: |
   preferences = userdata.get("prefs") or DAObject('preferences')  
@@ -52,6 +53,7 @@ code: |
     # This is a bit of a workaround
     for funnel in data_types:
       for datacat in data_types[funnel].entries.true_values():
+        data_types[funnel].details[datacat].sub_types
         data_types[funnel].details[datacat].data_subjects
     review_datacats
   else:
@@ -325,6 +327,14 @@ fields:
     default: |
       ${ data_types[i].df.loc[j]['Interview description'].lstrip() }
     hide if: intro
+  - Select subtypes of : data_types[i].details[j].sub_types
+    datatype: checkboxes
+    code: |
+      [
+        {'EthnicOrigin': 'Ethnic Origin'},
+        {'Language': 'Language'},
+        {'Race': 'Race'},
+      ]
   - Are you the controller?: data_types[i].details[j].is_controller
     datatype: yesnomaybe
   - note: |
