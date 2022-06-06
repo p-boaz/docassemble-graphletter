@@ -3,9 +3,29 @@ metadata:
     Transfer Impact Assessment
   short title: |
     TIA
+  description: |
+    Transfer Impact Assessment
 ---
+objects:
+  - respondents: DADict.using(gathered=True)
+---
+initial: True
 code: |
   multi_user = True
+  if user_logged_in():
+    if user_info().email not in respondents:
+      respondents.initializeObject(user_info().email)
+    user = respondents[user_info().email]
+  else:
+    must_be_logged_in_page
+---
+sets: must_be_logged_in_page
+question: Please log in
+subquestion: |
+  Please click "Sign in" to continue.  If you do not have
+  an account, you can register for one.
+buttons:
+  - Sign in: signin
 ---
 sections:
   - intro: Introduction
@@ -224,9 +244,6 @@ subquestion: |
   transfer, which will feed into later stages in the methodology
 field: intro_to_one
 ---
-code: |
-  countries = objects_from_file("countries_list.yml")
----
 mandatory: true
 section: countries
 question: |
@@ -237,12 +254,12 @@ subquestion: |
   relevant, indicate the specific Region/State
 fields:    
   - Exporting Country: exporting_country
-    datatype: object
-    choices: countries
+    code: countries_list()
+    default: US
 
   - Importing Country: importing_country
-    datatype: object
-    choices: countries
+    code: countries_list()
+    default: US
 ---
 mandatory: true
 section: exporter
@@ -457,7 +474,7 @@ question: |
   Section 2: Consider the adequacy of the legal regime in the
   destination country
 subquestion: |
-  At this stage, the methodology will assess if there is anything in the law or practice of **${ importing_country.name }** that may impinge on the effectiveness of the appropriate safeguards of the transfer tools you are relying on, in the context of your specific transfer.
+  At this stage, the methodology will assess if there is anything in the law or practice of **${ country_name(importing_country) }** that may impinge on the effectiveness of the appropriate safeguards of the transfer tools you are relying on, in the context of your specific transfer.
   
   We will also assess whether those protections are essentially equivalent to those offered within the EU and consistent with the restrictions set out in the GDPR and guarantees provided for in the relevant transfer terms (SCCs).
   
@@ -479,37 +496,9 @@ subquestion: |
   Here, we look at the extent to which local data privacy laws offer legal safeguards to the data processing of personal data equivalent to the protections offered in the EU. This includes an analysis of the local privacy and data protection law framework, including constitutional rights to privacy and how those laws apply both to the data importer but also third parties (e.g. law enforcement) who may seek to secure access to the data following transfer.
   
   In this context, note the EU / UK has a developed law that specifically recognises legal rights to protection of “personal data” consistent with the principles of data protection set out in OECD Convention 108+.
-
-  % if importing_country.level_of_protection == 'Member country of the EU or the EEA':
-  ${ importing_country } belongs to the European Economic Area.
   
-  % elif importing_country.level_of_protection == 'Adequate country':
-  ${ importing_country } ensures an adequate level of data protection recognized by EU. Data transfers to **${ importing_country }** do not require the use of transfer tools.
-
-  % elif importing_country.level_of_protection == 'Country partially adequate':
-  **${ importing_country }** is partially recognized as ensuring an adequate level of data protection by EU for certain specific processing. 
-
-  % elif importing_country.level_of_protection == 'Independent authority and law (s)':
-  **${ importing_country }** doesn't ensure an adequate level of data protection recognized by EU.
-  
-  * Data transfers to **${ importing_country }** require the use of transfer tools. 
-  * **${ importing_country }** has a data protection law and an independant data protection authority accredited at the international conference of data protection and privacy commissionners.
-
-  % elif importing_country.level_of_protection == 'With legislation':
-  **${ importing_country }** has general legislation on personal data protection or specific provisions, but it doesn't ensure an adequate level of data protection recognized by EU. Data transfers to **${ importing_country }** require the use of transfer tools.
-
-  % elif importing_country.level_of_protection == 'No law':
-  **${ importing_country }** doesn't have a data protection law. Therefore, it doesn't ensure an adequate level of data protection recognized by EU. Data transfers to **${ importing_country }** require the use of transfer tools.
-  
-  %endif
-  
-  % if importing_country.edpb_member == 'No':
-  ${ importing_country } is not a member of EDPB.
-  % else:
-  ${ importing_country } `is` a member of EDPB.
-  Find out about their data protection authority at `${ importing_country.sa_website }`.
-  
-  % endif
+  * Data transfers to **${ country_name(importing_country) }** require the use of transfer tools. 
+  * **${ country_name(importing_country) }** has a data protection law and an independant data protection authority accredited at the international conference of data protection and privacy commissionners.
   
 field: data_privacy_assessment
 ---

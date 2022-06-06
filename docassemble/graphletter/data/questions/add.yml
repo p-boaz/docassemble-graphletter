@@ -327,13 +327,16 @@ fields:
     default: |
       ${ data_types[i].df.loc[j]['Interview description'].lstrip() }
     hide if: intro
-  - Select subtypes of : data_types[i].details[j].sub_types
+  - Select subtypes: data_types[i].details[j].sub_types
     datatype: checkboxes
     code: |
       [
         {'EthnicOrigin': 'Ethnic Origin'},
         {'Language': 'Language'},
         {'Race': 'Race'},
+        {'Geographic': 'Geographic'},
+        {'IncomeBracket': 'Income Bracket'},
+        {'PhysicalTrait': 'Physical Trait'},
       ]
   - Are you the controller?: data_types[i].details[j].is_controller
     datatype: yesnomaybe
