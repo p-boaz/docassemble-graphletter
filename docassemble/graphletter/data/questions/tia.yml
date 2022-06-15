@@ -224,21 +224,27 @@ code: |
   if returning_user(minutes=0.5):
     welcome_back
 ---
+features:
+  javascript:
+    - back_button.js 
+  progress bar: False
+  hide navbar: True
+  css: progressivedisclosure.css
+  question back button: True
+  question help button: True
+---
 mandatory: true
 section: intro
 question: |
-  Welcome to the interview
+  Complete a Transfer Impact Assessment
 subquestion: |
-  If you are not on a
-  smartphone-sized device,
-  you should see a navigation
-  bar to the left.
+  A Transfer Impact Assessment (TIA) identifies and describes the risks associated with transfers of personal data to third countries, as well as any supplementary measures you have taken — or have required your vendors to take — to safeguard personal data.
 field: sees_nav_bar
 ---
 mandatory: True
 section: one
 question: |
-  Section 1: Identify key elements of the proposed data transfer
+  Section 1: Identify key elements of the data transfer
 subquestion: |
   At this stage we will confirm the key elements of the data
   transfer, which will feed into later stages in the methodology
