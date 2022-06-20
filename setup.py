@@ -43,7 +43,7 @@ def find_package_data(where='.', package='', exclude=standard_exclude, exclude_d
     return out
 
 setup(name='docassemble.graphletter',
-      version='0.1.1',
+      version='0.1.2',
       description=("graphletter's docassemble backend"),
       long_description="# docassemble.graphletter\r\n\r\ngraphletter's docassemble backend\r\n\r\n## Author\r\n\r\nSystem Admin, admin@graphletter.com\r\n\r\n",
       long_description_content_type='text/markdown',
@@ -53,7 +53,7 @@ setup(name='docassemble.graphletter',
       url='https://docassemble.org',
       packages=find_packages(),
       namespace_packages=['docassemble'],
-      install_requires=['docassemble.ALToolbox>=0.4.0'],
+      install_requires=['docassemble.ALToolbox>=0.4.3'],
       zip_safe=False,
       package_data=find_package_data(where='docassemble/graphletter/', package='docassemble.graphletter'),
      )
